@@ -1,0 +1,39 @@
+{
+  "name": "weathertop-node",
+  "version": "0.1.0",
+  "description": "WeatherTop is a companion web application designed for WeatherTop 1000, a modular weather station built with Express, Node & Handlebars.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js -e js,hbs,mjs,cjs,json"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-handlebars": "^6.0.7",
+    "fs-extra": "^11.1.0",
+    "lowdb": "^5.1.0",
+    "uuid": "^9.0.0"
+  },
+  "repository": {
+    "url": "https://github.com/pfortune/weathertop-node"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "engines": {
+    "node": "18.x.x"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prettier": "^2.8.4"
+  }
+}
