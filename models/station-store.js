@@ -6,6 +6,6 @@ const db = initStore("stations");
 export const stationStore = {
   async getAllStations() {
     await db.read();
-    return db.data.stations.sort((a, b) => a.name.localeCompare(b.name));
+    return db.data.stations.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
 };
