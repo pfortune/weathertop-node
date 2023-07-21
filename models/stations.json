@@ -1,0 +1,13 @@
+{
+  "file": "./models/stations.json",
+  "stations": [
+    {
+      "title": "Tramore",
+      "_id": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
+    },
+    {
+      "title": "Dunmore East",
+      "_id": "348f873a-d1ed-434d-8eaf-f42086bc235e"
+    }
+  ]
+}
