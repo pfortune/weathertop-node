@@ -9,9 +9,9 @@ export const readingStore = {
     return db.data.readings;
   },
 
-  async getReadingsBystationId(id) {
+  async getReadingsByStationId(id) {
     await db.read();
-    return db.data.readings.filter((reading) => reading.stationid === id);
+    return db.data.readings.filter((reading) => reading.stationId === id);
   },
 
   async getReadingById(id) {
