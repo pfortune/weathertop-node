@@ -1,10 +1,16 @@
 {{> menu active="dashboard"}}
 
+
+
 {{#each stations}}
+
 <div class="content box">
     <h1 class="title">
         {{ title }}
     </h1>
-   {{> list-readings}}
+
+    
+    {{> card-readings}}
+    {{> list-readings}}
 </div>
 {{/each}}

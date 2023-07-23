@@ -1,6 +1,6 @@
 <nav class="navbar is-info is-inverted">
   <div class="navbar-brand">
-    <a id="start" class="navbar-item" href="/"> Home </a>
+    <a id="home" class="navbar-item" href="/"> Home </a>
   </div>
   <div class="navbar-menu">
     <div class="navbar-end">
@@ -9,3 +9,7 @@
     </div>
   </div>
 </nav>
+
+<script>
+  document.getElementById("{{active}}").classList.add("has-background-black", "has-text-white");
+</script>

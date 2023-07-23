@@ -4,19 +4,23 @@
     <th>Weather Code</th>
     <th>Temperature °C</th>
     <th>Wind Speed (km/h)</th>
+    <th>Pressure</th>
   </tr>
   </thead>
   <tbody>
   {{#each readings}}
   <tr>
     <td>
-      {{ code }}
+      {{code}}
     </td>
     <td>
-      {{ temperature }}
+      {{temperature}}
     </td>
     <td>
-      {{ windSpeed}}
+      {{windSpeed}}
+    </td>
+    <td>
+      {{pressure}}
     </td>
   </tr>
   {{/each}}
