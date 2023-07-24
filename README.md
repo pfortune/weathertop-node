@@ -1,28 +1,28 @@
-# WeatherTop Baseline
+# WeatherTop Release 1
 
 ## Introduction
 
-WeatherTop Baseline is the second version of the WeatherTop web companion application designed for WeatherTop 1000, a modular weather station. This application includes all the features from v1-Starter and adds an additional piece of data, Pressure, in the readings for each weather station. The dashboard now presents the latest weather at each station, providing more comprehensive insights into current weather conditions.
+WeatherTop Release 1 is the third version of the WeatherTop web companion application designed for WeatherTop 1000, a modular weather station. This version builds upon the features of the Baseline version, including the addition of wind direction data for each station, an expanded wind summary, and the ability to add new stations and readings.
 
 ## Features
 
-- All features from v1-Starter
-- Additional pressure data (hPa) in readings for each station
-- Dashboard now displays the latest weather for each station, including:
-  - Station Name
-  - Weather conditions (code presented as a description)
-  - Temperature in both Celsius and Fahrenheit
-  - Wind speed in Beaufort scale
-  - Pressure
+- All features from the Baseline version
+- Additional data in the reading for each station:
+  - Wind Direction (number from 0 to 360)
+- Expanded wind summary for each station:
+  - Wind Compass
+  - Wind Chill
+- New Features:
+  1. Add Station
+  2. Add Reading
 
-### Weather Readings
+### Add Station
 
-Each reading in the JSON file consists of:
+The default view of the application now presents a list of station names on the dashboard (without current conditions or readings). A station can be added via the "Add Station" button, which accepts the station name. Clicking on the Folder button opens the station view, summarizing the latest weather at the station.
 
-- Weather code (number in range 100-800) - integer
-- Temperature (Celsius) - decimal
-- Wind speed (km/h) - decimal
-- Pressure (hPa) - number
+### Add Reading
+
+When a station is opened, the current conditions and readings appear. The application now allows users to add new readings to a station.
 
 ## Setup and Installation
 
@@ -35,6 +35,7 @@ Each reading in the JSON file consists of:
 
 ## Usage
 
-- Navigate to the Dashboard view to see the latest weather for each station, including weather conditions, temperature, wind speed, and pressure.
-- Visit the About page to learn more about WeatherTop Inc., the WeatherTop 1000 device, and the purpose of the web companion application.
-- The Main view contains interesting information about the application and the weather domain in general.
+- Navigate to the Dashboard view to see the list of station names.
+- Click on the Folder button to open a station view and see the latest weather at that station.
+- Use the "Add Station" button to create a new station.
+- Add new readings to a station when it is opened.
