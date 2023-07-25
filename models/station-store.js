@@ -1,6 +1,7 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
 import { readingStore } from "./reading-store.js"
+import { Analytics } from "../utils/analytics.js";
 
 const db = initStore("stations");
 
@@ -25,7 +26,7 @@ export const stationStore = {
       throw new Error(`Station with ID ${id} not found.`);
     }
     station.readings = await readingStore.getReadingsByStationId(station._id);
-    analytics.updateWeather(station);
+    Analytics.updateWeather(station);
     return station;
   },
 

@@ -1,16 +1,15 @@
 {{> menu active="dashboard"}}
 
 
-
 {{#each stations}}
 
 <div class="content box">
     <h1 class="title">
         {{ title }}
     </h1>
-
-    
-    {{> card-readings}}
-    {{> list-readings}}
+    <a href="/station/{{_id}}" class="button">
+        {{> icons/open }}
+    </a>
 </div>
+
 {{/each}}

@@ -1,0 +1,16 @@
+{{> menu active="station"}}
+
+
+
+{{#each stations}}
+
+<div class="content box">
+    <h1 class="title">
+        {{ title }}
+    </h1>
+
+    
+    {{> card-readings}}
+    {{> list-readings}}
+</div>
+{{/each}}
