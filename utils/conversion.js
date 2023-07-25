@@ -28,6 +28,50 @@ export const Conversion = {
   },
 
   /**
+   * Converts a wind direction in degrees to the corresponding compass direction.
+   *
+   * @param windDirection Wind direction in degrees
+   * @return The corresponding compass direction
+   */
+  windDirectionToCompass(windDirection) {
+    const compassDirections = [
+      "North", "North Northeast", "Northeast", "East Northeast", "East", "East Southeast", "Southeast", "South Southeast",
+      "South", "South Southwest", "Southwest", "West Southwest", "West", "West Northwest", "Northwest", "North Northwest", "North"
+    ];
+  
+    const degreeRange = 360.0 / (compassDirections.length - 1);
+    const index = Math.round((windDirection % 360) / degreeRange);
+    return compassDirections[index];
+  },
+
+  /**
+   * Calculates wind chill using the temperature and wind speed.
+   *
+   * @param temperature The temperature in degrees Celsius
+   * @param windSpeed The wind speed in km/h
+   * @return The wind chill in degrees Celsius
+   */
+
+  calculateWindChill(temperature, windSpeed) {
+    return this.roundToTwoDecimalPlaces(
+      13.12
+        + (0.6215 * temperature)
+        - (11.37 * Math.pow(windSpeed, 0.16))
+        + (0.3965 * temperature * Math.pow(windSpeed, 0.16))
+    );
+  },
+
+  /**
+   * Rounds a decimal value to two decimal places.
+   *
+   * @param value The decimal value to be rounded
+   * @return The rounded decimal value
+   */
+  roundToTwoDecimalPlaces(value) {
+    return parseFloat(value.toFixed(2));
+  },
+
+  /**
    * Returns the description corresponding to a Beaufort scale value.
    *
    * @param beaufortValue Beaufort scale value (0-12)

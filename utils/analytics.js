@@ -18,9 +18,8 @@ export const Analytics = {
       station.pressure = lastReading.pressure;
       station.maxPressure = this.maxPressure(station.readings);
       station.minPressure = this.minPressure(station.readings);
-
-      const windChill = 13.12 + 0.6215 * lastReading.temperature - 11.37 * Math.pow(lastReading.windSpeed, 0.16) + 0.3965 * lastReading.temperature * Math.pow(lastReading.windSpeed, 0.16);
-      station.windChill = parseFloat(windChill.toFixed(2));
+      station.windChill = Conversion.calculateWindChill(lastReading.temperature, lastReading.windSpeed);
+      station.windDirection = Conversion.windDirectionToCompass(lastReading.windDirection);    
     }
   },
   maxTemp(readings) {
