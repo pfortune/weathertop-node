@@ -2,15 +2,18 @@
 
 
 
-{{#each stations}}
-
 <div class="content box">
     <h1 class="title">
         {{ title }}
     </h1>
 
+    {{#if readings}}
+        {{> card-readings}}
+        {{> list-readings}}
+    {{else}}
+        <p>You have no readings yet. Add one!</p>
+    {{/if}}
     
-    {{> card-readings}}
-    {{> list-readings}}
 </div>
-{{/each}}
+
+{{> add-reading}}

@@ -12,7 +12,7 @@ export const readingStore = {
   async addReading(stationId, reading) {
     await db.read();
     reading._id = v4();
-    reading.stationid = stationId;
+    reading.stationId = stationId;
     db.data.readings.push(reading);
     await db.write();
     return reading;

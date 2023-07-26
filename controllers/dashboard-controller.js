@@ -11,5 +11,13 @@ export const dashboardController = {
 
     console.log("-- dashboard rendered");
     response.render("dashboard-view", viewData);
+  },
+
+  async addStation(request, response) {
+    const newStation = {
+      title: request.body.title
+    };
+    await stationStore.addStation(newStation);
+    response.redirect("/dashboard");
   }
 };

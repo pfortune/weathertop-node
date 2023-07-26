@@ -11,11 +11,11 @@ router.get("/", homeController.index);
 
 // Dashboard page
 router.get("/dashboard", dashboardController.index);
-// router.post("/dashboard/add", dashboardController.addStation);
+router.post("/dashboard/add", dashboardController.addStation);
 
 // Station page
 router.get("/station/:id", stationController.index);
-// router.post("/station/:id/add", stationController.addReading);
+router.post("/station/:id/add", stationController.addReading);
 
 // About page
 router.get("/about", aboutController.index);
