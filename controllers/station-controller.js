@@ -15,11 +15,11 @@ export const stationController = {
   async addReading(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     const newReading = {
-      code: request.body.code,
-      temperature: request.body.temperature,
-      windSpeed: request.body.windSpeed,
-      pressure: request.body.pressure,
-      windDirection: request.body.windDirection
+      code: parseInt(request.body.code),
+      temperature: parseInt(request.body.temperature),
+      windSpeed: parseInt(request.body.windSpeed),
+      pressure: parseInt(request.body.pressure),
+      windDirection: parseInt(request.body.windDirection)
     };
     await readingStore.addReading(station._id, newReading);
     await stationStore.getStationById(station._id);
