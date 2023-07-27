@@ -1,6 +1,16 @@
 {{> menu active="station"}}
 
+{{#if flash.error}}
+<div class="notification is-danger">
+  {{flash.error}}
+</div>
+{{/if}}
 
+{{#if flash.success}}
+<div class="notification is-success">
+  {{flash.success}}
+</div>
+{{/if}}
 
 <div class="content box">
     <h1 class="title">
