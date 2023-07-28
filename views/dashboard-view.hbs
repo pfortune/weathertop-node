@@ -1,5 +1,17 @@
 {{> menu active="dashboard"}}
 
+{{#if flash.error}}
+<div class="notification is-danger">
+  {{flash.error}}
+</div>
+{{/if}}
+
+{{#if flash.success}}
+<div class="notification is-success">
+  {{flash.success}}
+</div>
+{{/if}}
+
 {{#if stations}}
     {{> list-stations stations=stations}}
 {{else}}

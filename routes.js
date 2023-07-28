@@ -1,10 +1,13 @@
 import express from "express";
+import { flash } from "./utils/flash.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { homeController } from "./controllers/home-controller.js";
 import { stationController } from "./controllers/station-controller.js";
 
 export const router = express.Router();
+
+router.use(flash);
 
 // Home page
 router.get("/", homeController.index);

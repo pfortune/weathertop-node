@@ -81,6 +81,15 @@
       "windDirection": 6,
       "_id": "1ce294f4-f6ce-4d08-a244-4b97992cffe9",
       "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3"
+    },
+    {
+      "code": 400,
+      "temperature": 5,
+      "windSpeed": 5,
+      "pressure": 5,
+      "windDirection": 5,
+      "_id": "b4b50cd8-d814-42d2-b287-56435053a94b",
+      "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3"
     }
   ]
 }
