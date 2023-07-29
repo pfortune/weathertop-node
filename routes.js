@@ -1,5 +1,5 @@
 import express from "express";
-import { flash } from "./utils/flash.js";
+import { flash } from "./middleware/flash.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { homeController } from "./controllers/home-controller.js";

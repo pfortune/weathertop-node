@@ -3,15 +3,24 @@
   "stations": [
     {
       "title": "Tramore",
-      "_id": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
+      "_id": "02d31fad-e314-4f4e-8ad6-397a33f14c1a",
+      "latitude": 52.1623500,
+      "longitude": -7.1524400,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
       "title": "Dunmore East",
-      "_id": "348f873a-d1ed-434d-8eaf-f42086bc235e"
+      "_id": "348f873a-d1ed-434d-8eaf-f42086bc235e",
+      "latitude": 52.1499994,
+      "longitude": -6.9833294,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
       "title": "Hook Head",
-      "_id": "5efa143e-587a-4225-8aa0-06c5d81f81b3"
+      "_id": "5efa143e-587a-4225-8aa0-06c5d81f81b3",
+      "latitude": 52.123719,
+      "longitude": -6.929460,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     }
   ]
 }
