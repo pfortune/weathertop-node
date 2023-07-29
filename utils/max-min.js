@@ -4,5 +4,5 @@ export const MaxMin = {
   },
   min(values) {
     return Math.min(...values);
-  }
+  },
 };

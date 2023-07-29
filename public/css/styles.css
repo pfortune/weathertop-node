@@ -6,7 +6,12 @@
   padding: 10px;
 }
 
-.icon {
+.large-icon {
+  width: 200px;
+  height: 200px;
+}
+
+.weather-icon {
   width: 100px;
   height: 100px;
 }
@@ -16,6 +21,32 @@
   margin-right: auto;
 }
 
-.message {
+.message, .is-full-height {
   height: 100%;
+}
+
+.notification {
+  margin-top: 5px;
+}
+
+.card-header {
+  border-top: 1px solid rgba(34, 36, 38, .1);
+}
+
+.has-thin-border-bottom {
+  border-bottom: 1px solid rgba(34, 36, 38, .1);
+}
+
+button.icon:hover {
+  color: #cc0000 !important;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.icon {
+  font-size: 16px;
+}
+
+#confirmDeleteDialog form {
+  display: inline-block;
 }

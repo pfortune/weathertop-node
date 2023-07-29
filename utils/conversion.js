@@ -35,10 +35,25 @@ export const Conversion = {
    */
   windDirectionToCompass(windDirection) {
     const compassDirections = [
-      "North", "North Northeast", "Northeast", "East Northeast", "East", "East Southeast", "Southeast", "South Southeast",
-      "South", "South Southwest", "Southwest", "West Southwest", "West", "West Northwest", "Northwest", "North Northwest", "North"
+      "North",
+      "North Northeast",
+      "Northeast",
+      "East Northeast",
+      "East",
+      "East Southeast",
+      "Southeast",
+      "South Southeast",
+      "South",
+      "South Southwest",
+      "Southwest",
+      "West Southwest",
+      "West",
+      "West Northwest",
+      "Northwest",
+      "North Northwest",
+      "North",
     ];
-  
+
     const degreeRange = 360.0 / (compassDirections.length - 1);
     const index = Math.round((windDirection % 360) / degreeRange);
     return compassDirections[index];
@@ -54,10 +69,10 @@ export const Conversion = {
 
   calculateWindChill(temperature, windSpeed) {
     return this.roundToTwoDecimalPlaces(
-      13.12
-        + (0.6215 * temperature)
-        - (11.37 * Math.pow(windSpeed, 0.16))
-        + (0.3965 * temperature * Math.pow(windSpeed, 0.16))
+      13.12 +
+        0.6215 * temperature -
+        11.37 * Math.pow(windSpeed, 0.16) +
+        0.3965 * temperature * Math.pow(windSpeed, 0.16)
     );
   },
 

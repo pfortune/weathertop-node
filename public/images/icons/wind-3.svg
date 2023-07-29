@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+     y="0px"
+     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#E2E8F0;stroke-width:18;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:148;}
+	.st1{fill:none;stroke:#E2E8F0;stroke-width:18;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:110;}
+	.st2{fill:#FFFFFF;}
+</style>
+    <symbol id="a" viewBox="-171 -117 342.1 234">
+	<path class="st0"
+          d="M93.2-95.7c15.3-15.9,40.6-16.5,56.6-1.2c15.9,15.3,16.5,40.6,1.2,56.6c-7.6,7.9-18,12.3-28.9,12.3h-284	">
+<animate accumulate="none" additive="replace" attributeName="stroke-dashoffset" calcMode="linear" dur="6s" fill="remove"
+         repeatCount="indefinite" restart="always" values="0; 2072">
+			</animate>
+	</path>
+        <path class="st1"
+              d="M-22.8,95.7c15.3,15.9,40.6,16.5,56.6,1.2s16.5-40.6,1.2-56.6C27.3,32.4,16.9,28,6,28h-168	">
+<animate accumulate="none" additive="replace" attributeName="stroke-dashoffset" calcMode="linear" dur="6s" fill="remove"
+         repeatCount="indefinite" restart="always" values="0; 880">
+			</animate>
+	</path>
+</symbol>
+    <g>
+	<defs>
+		<rect id="SVGID_1_" x="85" y="139" width="342" height="234"/>
+	</defs>
+        <clipPath id="SVGID_00000059998993339388221390000004311277115243206546_">
+		<use xlink:href="#SVGID_1_" style="overflow:visible;"/>
+	</clipPath>
+        <g style="clip-path:url(#SVGID_00000059998993339388221390000004311277115243206546_);">
+		
+			<use xlink:href="#a" width="342.1" height="234" x="-171" y="-117" transform="matrix(1 0 0 1 256.0284 256)"
+                 style="overflow:visible;"/>
+	</g>
+</g>
+    <path class="st2" d="M397.5,305.2c4.2,0.6,8,2.6,10.8,5.7c2.6,3.1,4,7.1,3.8,11.2c0.1,6.1-2.5,11.8-7.2,15.7
+	c-4.9,4.1-11.6,6.2-20.3,6.2c-9.1,0-16.1-2.2-21-6.7s-7.5-10.7-7.8-18.6h16.5c0.4,7.8,4.3,11.7,11.7,11.7c2.8,0.1,5.5-0.7,7.7-2.4
+	c1.9-1.6,2.9-4,2.8-6.5c0.2-2.5-1-5-3-6.5c-2.5-1.6-5.4-2.4-8.4-2.2h-4.9v-12h5.2c3,0,5.3-0.6,7-2c1.6-1.4,2.5-3.5,2.4-5.7
+	c0.1-2.2-0.8-4.3-2.4-5.8c-1.7-1.4-4-2-7-2s-5.2,0.7-6.8,2.1s-2.4,3.9-2.7,7.2H358c0.7-15.1,9.3-22.6,26-22.6c7.9,0,14,1.7,18.5,5.2
+	c4.2,3.1,6.7,8.1,6.6,13.3c0.1,3.3-1,6.6-3,9.3C403.9,302.5,400.9,304.4,397.5,305.2L397.5,305.2z"/>
+</svg>

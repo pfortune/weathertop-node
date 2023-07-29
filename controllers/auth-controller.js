@@ -17,5 +17,5 @@ export const authController = {
 
     console.log("-- register rendered");
     response.render("register-view", viewData);
-  }
+  },
 };

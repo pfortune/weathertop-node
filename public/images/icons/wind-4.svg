@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+     y="0px"
+     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#E2E8F0;stroke-width:18;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:148;}
+	.st1{fill:none;stroke:#E2E8F0;stroke-width:18;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:110;}
+	.st2{fill:#FFFFFF;}
+</style>
+    <symbol id="a" viewBox="-171 -117 342.1 234">
+	<path class="st0"
+          d="M93.2-95.7c15.3-15.9,40.6-16.5,56.6-1.2c15.9,15.3,16.5,40.6,1.2,56.6c-7.6,7.9-18,12.3-28.9,12.3h-284	">
+<animate accumulate="none" additive="replace" attributeName="stroke-dashoffset" calcMode="linear" dur="6s" fill="remove"
+         repeatCount="indefinite" restart="always" values="0; 2368">
+			</animate>
+	</path>
+        <path class="st1"
+              d="M-22.8,95.7c15.3,15.9,40.6,16.5,56.6,1.2s16.5-40.6,1.2-56.6C27.3,32.4,16.9,28,6,28h-168	">
+<animate accumulate="none" additive="replace" attributeName="stroke-dashoffset" calcMode="linear" dur="6s" fill="remove"
+         repeatCount="indefinite" restart="always" values="0; 1100">
+			</animate>
+	</path>
+</symbol>
+    <g>
+	<defs>
+		<rect id="SVGID_1_" x="85" y="139" width="342" height="234"/>
+	</defs>
+        <clipPath id="SVGID_00000142154110601095252020000012050624604466332548_">
+		<use xlink:href="#SVGID_1_" style="overflow:visible;"/>
+	</clipPath>
+        <g style="clip-path:url(#SVGID_00000142154110601095252020000012050624604466332548_);">
+		
+			<use xlink:href="#a" width="342.1" height="234" x="-171" y="-117" transform="matrix(1 0 0 1 256.0284 256)"
+                 style="overflow:visible;"/>
+	</g>
+</g>
+    <path class="st2" d="M404.2,272v42.5l10.5-0.3v14.3l-10.6-0.3V344h-17.6v-15.8l-33.2,0.3V312l32.5-40.1L404.2,272z M367.6,314.5h19
+	v-22.8h-0.3L367.6,314.5z"/>
+</svg>

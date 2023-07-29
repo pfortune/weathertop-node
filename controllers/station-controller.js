@@ -19,25 +19,24 @@ export const stationController = {
   async addReading(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     const { code, temperature, windSpeed, pressure, windDirection } = request.body;
-    
+
     // Validation
     if (!code || !temperature || !windSpeed || !pressure || !windDirection) {
-      response.cookie('flash_error', 'All fields must be filled!', { maxAge: 10000 }); // Expires after 10 seconds
+      response.cookie("flash_error", "All fields must be filled!", { maxAge: 10000 }); // Expires after 10 seconds
       response.redirect(`/station/${station._id}`);
       return;
     }
-  
+
     const newReading = {
       code: parseInt(code),
       temperature: parseInt(temperature),
       windSpeed: parseInt(windSpeed),
       pressure: parseInt(pressure),
-      windDirection: parseInt(windDirection)
+      windDirection: parseInt(windDirection),
     };
-  
+
     await readingStore.addReading(station._id, newReading);
-    response.cookie('flash_success', 'Reading added successfully!', { maxAge: 10000 }); // Expires after 10 seconds
+    response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
     response.redirect(`/station/${station._id}`);
-  }
-  
+  },
 };

@@ -1,63 +1,76 @@
 {{> menu active="register"}}
 
-<div class="ui column middle aligned grid basic segment">
-    <div class="column">
-        <form class="ui stacked segment form" action="/register" method="POST">
-            <h3 class="ui header">Register</h3>
+<div class="container mt-6 mb-6">
+  <div class="columns is-centered">
+    <div class="column is-4">
+      <form class="ui stacked segment form" action="/register" method="POST">
+        <h3 class="title has-text-centered">Register</h3>
 
-            <!-- Flash message section -->
-            {{#if flash.error}}
-            <div class="notification is-danger">
-              {{flash.error}}
-            </div>
-            {{/if}}
+        <!-- Flash message section -->
+        {{#if flash.error}}
+          <div class="notification is-danger">
+            {{flash.error}}
+          </div>
+        {{/if}}
 
-            {{#if flash.success}}
-            <div class="notification is-success">
-              {{flash.success}}
-            </div>
-            {{/if}}
-            <!-- End of Flash message section -->
+        {{#if flash.success}}
+          <div class="notification is-success">
+            {{flash.success}}
+          </div>
+        {{/if}}
+        <!-- End of Flash message section -->
 
-            <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="First Name" name="firstname" required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-user"></i>
-                    </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="Last Name" name="lastname" required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-user"></i>
-                    </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email" name="email" required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-envelope"></i>
-                    </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control has-icons-left">
-                    <input class="input" type="password" minlength="8" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" name="password" required>
-                    <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <button class="button is-success">
-                        Register
-                    </button>
-                </p>
-            </div>
-        </form>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="First Name" name="firstname" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Last Name" name="lastname" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" name="email" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input
+              class="input"
+              type="password"
+              minlength="8"
+              pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              placeholder="Password"
+              name="password"
+              required
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-success">
+              Register
+            </button>
+          </p>
+        </div>
+      </form>
     </div>
+    <div class="column is-4">
+      <img src="../images/weather-register.webp" />
+    </div>
+  </div>
 </div>

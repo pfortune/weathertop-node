@@ -39,7 +39,7 @@ export const readingStore = {
       db.data.readings.splice(index, 1);
       await db.write();
     } else {
-      throw new Error('Reading not found');
+      throw new Error("Reading not found");
     }
   },
 
@@ -58,9 +58,7 @@ export const readingStore = {
       reading.pressure = updatedReading.pressure;
       await db.write();
     } else {
-      throw new Error('Reading not found');
+      throw new Error("Reading not found");
     }
   },
-  
-
 };

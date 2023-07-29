@@ -1,50 +1,52 @@
 {{> menu active="login"}}
 
-<div class="ui column middle aligned grid basic segment">
-    <div class="column">
-        <form class="ui stacked segment form" action="/authenticate" method="POST">
-            <h3 class="ui header">Log-in</h3>
+<div class="container mt-6 mb-6">
+  <div class="columns is-centered">
+    <div class="column is-4">
+      <form class="ui stacked segment form" action="/authenticate" method="POST">
+        <h2 class="has-text-centered title">Log-in</h2>
 
-            <!-- Flash message section -->
-            {{#if flash.error}}
-            <div class="notification is-danger">
-              {{flash.error}}
-            </div>
-            {{/if}}
+        <!-- Flash message section -->
+        {{#if flash.error}}
+          <div class="notification is-danger">
+            {{flash.error}}
+          </div>
+        {{/if}}
 
-            {{#if flash.success}}
-            <div class="notification is-success">
-              {{flash.success}}
-            </div>
-            {{/if}}
-            <!-- End of Flash message section -->
+        {{#if flash.success}}
+          <div class="notification is-success">
+            {{flash.success}}
+          </div>
+        {{/if}}
+        <!-- End of Flash message section -->
 
-            <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email" name="email" required>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-envelope"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="fas fa-check"></i>
-                    </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control has-icons-left">
-                    <input class="input" type="password" placeholder="Password" name="password" required>
-                    <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <button class="button is-success">
-                        Login
-                    </button>
-                </p>
-            </div>
-        </form>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" name="email" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" name="password" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-success">
+              Login
+            </button>
+          </p>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

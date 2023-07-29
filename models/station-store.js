@@ -9,7 +9,7 @@ export const stationStore = {
     await db.read();
     return db.data.stations.sort((a, b) => (a.name > b.name ? 1 : -1));
   },
-  
+
   async addStation(station) {
     await db.read();
     station._id = v4();
@@ -43,4 +43,3 @@ export const stationStore = {
     await db.write();
   },
 };
-

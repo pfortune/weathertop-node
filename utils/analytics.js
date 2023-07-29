@@ -19,26 +19,25 @@ export const Analytics = {
       station.maxPressure = this.maxPressure(station.readings);
       station.minPressure = this.minPressure(station.readings);
       station.windChill = Conversion.calculateWindChill(lastReading.temperature, lastReading.windSpeed);
-      station.windDirection = Conversion.windDirectionToCompass(lastReading.windDirection);    
+      station.windDirection = Conversion.windDirectionToCompass(lastReading.windDirection);
     }
   },
   maxTemp(readings) {
-    return MaxMin.max(readings.map(reading => reading.temperature));
+    return MaxMin.max(readings.map((reading) => reading.temperature));
   },
   minTemp(readings) {
-    return MaxMin.min(readings.map(reading => reading.temperature));
+    return MaxMin.min(readings.map((reading) => reading.temperature));
   },
   maxWindSpeed(readings) {
-    return MaxMin.max(readings.map(reading => reading.windSpeed));
+    return MaxMin.max(readings.map((reading) => reading.windSpeed));
   },
   minWindSpeed(readings) {
-    return MaxMin.min(readings.map(reading => reading.windSpeed));
+    return MaxMin.min(readings.map((reading) => reading.windSpeed));
   },
   maxPressure(readings) {
-    return MaxMin.max(readings.map(reading => reading.pressure));
+    return MaxMin.max(readings.map((reading) => reading.pressure));
   },
   minPressure(readings) {
-    return MaxMin.min(readings.map(reading => reading.pressure));
+    return MaxMin.min(readings.map((reading) => reading.pressure));
   },
-
 };

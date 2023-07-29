@@ -1,32 +1,32 @@
 <table class="table is-striped is-hoverable">
   <thead>
-  <tr>
-    <th>Weather Code</th>
-    <th>Temperature °C</th>
-    <th>Wind Speed (km/h)</th>
-    <th>Wind Direction</th>
-    <th>Pressure</th>
-  </tr>
+    <tr>
+      <th>Weather Code</th>
+      <th>Temperature °C</th>
+      <th>Wind Speed (km/h)</th>
+      <th>Wind Direction</th>
+      <th>Pressure</th>
+    </tr>
   </thead>
   <tbody>
-  {{#each readings}}
-  <tr>
-    <td>
-      {{code}}
-    </td>
-    <td>
-      {{temperature}}
-    </td>
-    <td>
-      {{windSpeed}}
-    </td>
-    <td>
-      {{windDirection}}
-    </td>
-    <td>
-      {{pressure}}
-    </td>
-  </tr>
-  {{/each}}
+    {{#each readings}}
+      <tr>
+        <td>
+          {{code}}
+        </td>
+        <td>
+          {{temperature}}
+        </td>
+        <td>
+          {{windSpeed}}
+        </td>
+        <td>
+          {{windDirection}}
+        </td>
+        <td>
+          {{pressure}}
+        </td>
+      </tr>
+    {{/each}}
   </tbody>
 </table>
