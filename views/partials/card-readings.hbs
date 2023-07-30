@@ -4,68 +4,113 @@
       <div class="message-header has-background-black">
         Location
       </div>
-      <div class="message-body has-text-white">
-        {{title}}
+      <div class="message-body">
+        <div class="columns">
+          <div class="column has-text-white">
+            {{title}}
+            <br />
+            {{longitude}}
+            <br />
+            {{latitude}}
+          </div>
+          <div class="column">
+            <div class="image icon">
+              <img src="../images/icons/compass.svg" />
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   </div>
-  <div class="column">
-    <article class="message has-background-black">
-      <div class="message-header has-background-black">
-        Weather
-      </div>
-      <div class="message-body has-text-white">
-        <p>
-          {{weather}}
-        </p>
-      </div>
-    </article>
-  </div>
+
   <div class="column">
     <article class="message has-background-black">
       <div class="message-header has-background-black">
         Temperature
       </div>
-      <div class="message-body has-text-white">
-        <p>
-          {{tempC}}
-          °C
-          <br />
-          {{tempF}}
-          °F
-        </p>
+      <div class="message-body">
+        <div class="columns is-mobile">
+          <div class="column has-text-white">
+            <p>
+              {{tempC}} °C
+              <br>
+              {{tempF}} °F
+            </p>
+            <p>
+              min: {{minTemp}}
+              <br>
+              max: {{maxTemp}}
+            </p>
+          </div>
+          <div class="column is-half">
+            <div class="image icon">
+              <img src="../images/icons/thermometer.svg">
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   </div>
+
   <div class="column">
     <article class="message has-background-black">
       <div class="message-header has-background-black">
         Wind
       </div>
-      <div class="message-body has-text-white">
-        <p>
-          {{beaufort}}
-          bft
-          <br />
-          {{windDirection}}
-          <br />
-          Feels like
-          {{windChill}}
-          °C
-        </p>
+      <div class="message-body">
+        <div class="columns is-mobile">
+          <div class="column has-text-white">
+            <p>
+              {{beaufort}}
+              bft
+              <br />
+              {{windDirection}}
+              <br />
+              Feels like
+              {{windChill}}
+              °C
+            </p>
+            <p>
+              min:
+              {{minWindSpeed}}
+              <br />
+              max:
+              {{maxWindSpeed}}
+            </p>
+          </div>
+          <div class="column is-half">
+            <div class="image icon">
+              <img src="../images/icons/wind-{{beaufort}}.svg" />
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   </div>
+
   <div class="column">
     <article class="message has-background-black">
       <div class="message-header has-background-black">
         Pressure
       </div>
-      <div class="message-body has-text-white">
-        <p>
-          {{pressure}}
-          hpa
-        </p>
+      <div class="message-body">
+        <div class="columns is-mobile">
+          <div class="column has-text-white">
+            <p>
+              {{pressure}} hpa
+            </p>
+            <p>
+              min: {{minPressure}} hpa
+              <br>
+              max: {{maxPressure}} hpa
+            </p>
+          </div>
+          <div class="column is-half">
+            <div class="image icon">
+              <img src="../images/icons/barometer.svg">
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   </div>

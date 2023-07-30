@@ -6,6 +6,11 @@
   padding: 10px;
 }
 
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
 .large-icon {
   width: 200px;
   height: 200px;

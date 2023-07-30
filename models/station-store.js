@@ -20,7 +20,7 @@ export const stationStore = {
 
   async getStationsByUserId(userId) {
     await db.read();
-    return db.data.stations.filter((station) => station.userId === userId);
+    return db.data.stations.filter((station) => station.userid === userId);
   },
 
   async getStationById(id) {

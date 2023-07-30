@@ -4,8 +4,8 @@
     {
       "title": "Tramore",
       "_id": "02d31fad-e314-4f4e-8ad6-397a33f14c1a",
-      "latitude": 52.1623500,
-      "longitude": -7.1524400,
+      "latitude": 52.16235,
+      "longitude": -7.15244,
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
@@ -19,8 +19,15 @@
       "title": "Hook Head",
       "_id": "5efa143e-587a-4225-8aa0-06c5d81f81b3",
       "latitude": 52.123719,
-      "longitude": -6.929460,
+      "longitude": -6.92946,
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
+    },
+    {
+      "title": "Lighthouse of Alexandria",
+      "userid": "b10d9b31-3f7e-4695-83ac-79549931ca53",
+      "latitude": "31.213339",
+      "longitude": "29.884668",
+      "_id": "d3e7d308-5253-4a1a-b65b-5a1b55b6b04a"
     }
   ]
 }

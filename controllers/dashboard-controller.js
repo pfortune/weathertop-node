@@ -28,22 +28,32 @@ export const dashboardController = {
       return;
     }
 
-    const { title } = request.body;
+    const { title, latitude, longitude } = request.body;
 
     if (!title || title.trim() === "") {
       response.cookie("flash_error", "Station title cannot be empty!", { maxAge: 10000 });
       response.redirect("/dashboard");
       return;
+    } else if (latitude < -90 || latitude > 90) {
+      response.cookie("flash_error", "Latitude must be between -90 and 90!", { maxAge: 10000 });
+      response.redirect("/dashboard");
+      return;
+    } else if (longitude < -180 || longitude > 180) {
+      response.cookie("flash_error", "Longitude must be between -180 and 180!", { maxAge: 10000 });
+      response.redirect("/dashboard");
+      return;
+    } else {
+      // Validation passed
+      const newStation = {
+        title,
+        userid: request.user._id, // Associate the station with the user
+        latitude,
+        longitude
+      };
+
+      await stationStore.addStation(newStation);
+      response.cookie("flash_success", "Station added successfully!", { maxAge: 10000 });
+      response.redirect("/dashboard");
     }
-
-    // Include user ID in the new station
-    const newStation = {
-      title: title,
-      userId: request.user._id, // Associate the station with the user
-    };
-
-    await stationStore.addStation(newStation);
-    response.cookie("flash_success", "Station added successfully!", { maxAge: 10000 });
-    response.redirect("/dashboard");
   },
 };
