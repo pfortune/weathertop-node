@@ -1,33 +1,58 @@
-# WeatherTop Release 2
+# WeatherTop Release 3
+
+Live Glitch App: [https://weathertopnode.glitch.me](https://weathertopnode.glitch.me)
+Live Web App: [https://weathertop.ie](https://weathertop.ie)
+
+## Test Account Details
+
+Email: homer@simpson.com
+Password: secret
 
 ## Introduction
 
-WeatherTop Release 2 is the fourth version of the WeatherTop web companion application designed for WeatherTop 1000, a modular weather station. This version builds upon the features of Release 1 and includes new features such as User Accounts, Station Locations, Current Weather Icons, and Max/Min weather readings.
+WeatherTop Release 3 is the fifth and penultimate version of the WeatherTop web companion application designed for 
+WeatherTop 1000, a modular weather station. This version includes all features from the previous release, and adds 6 
+new features such as Trends, Date/Time stamp, All Stations Summary, Delete Support, Cloud Deployment, and Member Detail 
+Editing.
 
 ## Features
 
-- All features from Release 1
+- All features from Release 2
 - New Features:
-  1. User Accounts
-  2. Location of Station
-  3. Current Weather Icon
-  4. Max/Min Readings
+    1. Trends
+    2. Date/Time Stamp on Each Reading
+    3. All Stations Summary
+    4. Station/Reading Delete Support
+    5. Deployed to the Cloud
+    6. Members Can Edit Their Personal Details
 
-### User Accounts
+### Trends
 
-Users must register and log in to use this version of the application. The login page is presented upon application launch, with unregistered users having the option to sign up.
+Trends are available for Temperature, Wind Speed and Pressure. A trend can be:
 
-### Location of Station
+- Rising (📈): the three most recent measurements are increasing
+- Falling (📉): the three most recent measurements are falling
+- Steady: neither of the above
 
-When adding a station, users are now required to input the latitude and longitude of the station in decimal degrees (DD) format.
+### Date/Time Stamp on Each Reading
 
-### Current Weather Icon
+Each reading is now timestamped with the current time and date.
 
-Each weather code is associated with a corresponding icon, enhancing the visual representation of the current weather condition at a station.
+### All Stations Summary
 
-### Max/Min Readings
+On the main dashboard, the latest conditions (excluding readings) for each station are displayed.
 
-The station report now includes maximum and minimum values for temperature, wind speed, and pressure.
+### Station/Reading Delete Support
+
+Delete buttons have been added next to each reading and station for easier data management.
+
+### Deployed to the Cloud
+
+The application is now deployed to a cloud service for wider accessibility.
+
+### Members Can Edit Their Personal Details
+
+Members now have the option to edit their personal details.
 
 ## Setup and Installation
 
@@ -45,4 +70,6 @@ The station report now includes maximum and minimum values for temperature, wind
 - Click on the Folder button to open a station view and see the latest weather at that station.
 - Use the "Add Station" button to create a new station, making sure to include the station's location.
 - Add new readings to a station when it is opened.
-- View the max/min readings for temperature, wind speed, and pressure in the station report.
+- View the max/min readings and trends for temperature, wind speed, and pressure in the station report.
+- Delete readings and stations as needed.
+- Edit your personal details via the account settings.
