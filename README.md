@@ -1,11 +1,11 @@
 # WeatherTop Release 3
 
 Live Glitch App: [https://weathertopnode.glitch.me](https://weathertopnode.glitch.me)
-Live Web App: [https://weathertop.ie](https://weathertop.ie)
 
 ## Test Account Details
 
 Email: homer@simpson.com
+
 Password: secret
 
 ## Introduction
