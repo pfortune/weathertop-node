@@ -8,15 +8,15 @@
 
         <!-- Flash message section -->
         {{#if flash.error}}
-          <div class="notification is-danger">
-            {{flash.error}}
-          </div>
+        <div id="flash_message" class="flash-error notification is-danger">
+          {{flash.error}}
+        </div>
         {{/if}}
 
         {{#if flash.success}}
-          <div class="notification is-success">
-            {{flash.success}}
-          </div>
+        <div id="flash_message" class="flash-success notification is-success">
+          {{flash.success}}
+        </div>
         {{/if}}
         <!-- End of Flash message section -->
 
