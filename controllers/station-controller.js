@@ -1,5 +1,5 @@
 import { stationStore } from "../models/station-store.js";
-import { readingStore } from "../models/reading-store.js"; // import readingStore
+import { readingStore } from "../models/reading-store.js";
 import { Analytics } from "../utils/analytics.js";
 
 export const stationController = {
@@ -19,7 +19,7 @@ export const stationController = {
     }
 
     Analytics.updateWeather(station);
-
+    console.log(station);
     const viewData = {
       ...station,
       flash: request.flash,

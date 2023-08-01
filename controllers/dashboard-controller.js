@@ -10,7 +10,7 @@ export const dashboardController = {
 
     // Fetch stations only belonging to the logged-in user
     const stations = await stationStore.getStationsByUserId(request.user._id);
-
+    
     const viewData = {
       title: "Dashboard",
       stations,

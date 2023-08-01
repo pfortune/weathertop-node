@@ -1,7 +1,8 @@
 <nav class="navbar is-info is-inverted">
   <div class="navbar-brand">
-    <a id="start" class="navbar-item" href="/"> Home </a>
-
+    {{#unless user}}
+      <a id="start" class="navbar-item" href="/"> Home </a>
+    {{/unless}}
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -10,13 +11,15 @@
   </div>
   <div id="navbarBasic" class="navbar-menu">
     <div class="navbar-end">
-      <a id="about" class="navbar-item" href="/about">About</a>
       {{#unless user}}
-        <a id="login" class="navbar-item" href="/login">Login</a>
-        <a id="register" class="navbar-item" href="/register">Register</a>
+          <a id="about" class="navbar-item" href="/about">About</a>
+          <a id="login" class="navbar-item" href="/login">Login</a>
+          <a id="register" class="navbar-item" href="/register">Register</a>
       {{else}}
-        <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
-        <a id="logout" class="navbar-item" href="/logout">Logout</a>
+          <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
+          <a id="account" class="navbar-item" href="/account">Profile</a>
+          <a id="about" class="navbar-item" href="/about">About</a>
+          <a id="logout" class="navbar-item" href="/logout">Logout</a>
       {{/unless}}
     </div>
   </div>
