@@ -1,117 +1,264 @@
-<div class="columns">
-  <div class="column">
-    <article class="message has-background-black">
-      <div class="message-header has-background-black">
-        Location
-      </div>
-      <div class="message-body">
-        <div class="columns">
-          <div class="column has-text-white">
-            {{title}}
-            <br />
-            {{longitude}}
-            <br />
-            {{latitude}}
-          </div>
-          <div class="column">
-            <div class="image icon">
-              <img src="../images/icons/compass.svg" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </div>
+<section class="section px-5 py-0">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-4-desktop">
+                <div class="box is-full-height has-background-dark pb-3">
+                    <div class="columns is-gapless is-multiline is-mobile has-text-white">
+                        <div class="column is-full mb-0">
+                            <div class="columns is-mobile is-gapless is-vcentered">
+                                <div class="column is-half is-one-thirds-mobile">
 
-  <div class="column">
-    <article class="message has-background-black">
-      <div class="message-header has-background-black">
-        Temperature
-      </div>
-      <div class="message-body">
-        <div class="columns is-mobile">
-          <div class="column has-text-white">
-            <p>
-              {{tempC}} °C
-              <br>
-              {{tempF}} °F
-            </p>
-            <p>
-              min: {{minTemp}}
-              <br>
-              max: {{maxTemp}}
-            </p>
-          </div>
-          <div class="column is-half">
-            <div class="image icon">
-              <img src="../images/icons/thermometer.svg">
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </div>
+                                    <h4 class="title is-size-4 has-text-weight-bold has-text-white">
+                                        {{title}}</h4>
+                                </div>
+                                <div class="column">
+                                    <div class="column has-text-weight-bold has-text-right p-0">
 
-  <div class="column">
-    <article class="message has-background-black">
-      <div class="message-header has-background-black">
-        Wind
-      </div>
-      <div class="message-body">
-        <div class="columns is-mobile">
-          <div class="column has-text-white">
-            <p>
-              {{beaufort}}
-              bft
-              <br />
-              {{windDirection}}
-              <br />
-              Feels like
-              {{windChill}}
-              °C
-            </p>
-            <p>
-              min:
-              {{minWindSpeed}}
-              <br />
-              max:
-              {{maxWindSpeed}}
-            </p>
-          </div>
-          <div class="column is-half">
-            <div class="image icon">
-              <img src="../images/icons/wind-{{beaufort}}.svg" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </div>
+                                        Latitude:
+                                    </div>
+                                    <div class="column has-text-weight-bold has-text-right p-0">
 
-  <div class="column">
-    <article class="message has-background-black">
-      <div class="message-header has-background-black">
-        Pressure
-      </div>
-      <div class="message-body">
-        <div class="columns is-mobile">
-          <div class="column has-text-white">
-            <p>
-              {{pressure}} hpa
-            </p>
-            <p>
-              min: {{minPressure}} hpa
-              <br>
-              max: {{maxPressure}} hpa
-            </p>
-          </div>
-          <div class="column is-half">
-            <div class="image icon">
-              <img src="../images/icons/barometer.svg">
+                                        Longitude:
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="column has-text-weight-bold has-text-right py-0 px-2">
+
+                                        {{latitude}}
+                                    </div>
+                                    <div class="column has-text-weight-bold has-text-right py-0 px-2">
+
+                                        {{longitude}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="has-image-centered image large-icon">
+                        <img src="../images/icons/{{weatherIcon weather}}.svg">
+                        <div class="has-text-centered has-text-white is-size-4 has-text-weight-bold">
+                            {{weather}}
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="column is-4-desktop">
+                <div class="card events-card">
+                    <header class="card-header is-shadowless p-2">
+                        <p class="card-header-title is-size-3">
+                            Stats
+                        </p>
+                    </header>
+
+                    <header class="card-header is-shadowless">
+                        <p class="card-header-title is-centered">
+                            Temperature (°C)
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="columns is-flex">
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                    {{minTemp}}
+                                </div>
+                                <div class="is-size-6 has-text-weight-bold is-uppercase">Min</div>
+                            </div>
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                    {{maxTemp}}
+                                </div>
+                                <div class="is-size-6 has-text-weight-bold is-uppercase">Max</div>
+                            </div>
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                  {{#if (eq tempTrend "increasing")}}
+                                    <i class="fas fa-arrow-up"></i>
+                                  {{/if}}
+                                  {{#if (eq tempTrend "decreasing")}}
+                                    <i class="fas fa-arrow-down"></i>
+                                  {{/if}}
+                                  {{#if (eq tempTrend "steady")}}
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                  {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <header class="card-header is-shadowless">
+                        <p class="card-header-title is-centered">
+                            Wind Speed (km/h)
+                        </p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="columns is-flex">
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                    {{minWindSpeed}}
+                                </div>
+                                <div class="is-size-6 has-text-weight-bold is-uppercase">Min</div>
+                            </div>
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                    {{maxWindSpeed}}
+                                </div>
+                                <div class="is-size-6 has-text-weight-bold is-uppercase">Max</div>
+                            </div>
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                  {{#if (eq windSpeedTrend "increasing")}}
+                                      <i class="fas fa-arrow-up"></i>
+                                    {{/if}}
+                                    {{#if (eq windSpeedTrend "decreasing")}}
+                                      <i class="fas fa-arrow-down"></i>
+                                    {{/if}}
+                                    {{#if (eq windSpeedTrend "steady")}}
+                                      <i class="fas fa-arrows-alt-h"></i>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <header class="card-header is-shadowless is-info">
+                        <p class="card-header-title is-centered">
+                            Pressure (hPa)
+                        </p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="columns is-flex">
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                    {{minPressure}}
+                                </div>
+                                <div class="is-size-6 has-text-weight-bold is-uppercase">Min</div>
+                            </div>
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                    {{maxPressure}}
+                                </div>
+                                <div class="is-size-6 has-text-weight-bold is-uppercase">Max</div>
+                            </div>
+                            <div class="column is-one-third has-text-centered py-0">
+                                <div class="is-size-4 has-text-weight-bold">
+                                  {{#if (eq pressureTrend "increasing")}}
+                                    <i class="fas fa-arrow-up"></i>
+                                  {{/if}}
+                                  {{#if (eq pressureTrend "decreasing")}}
+                                    <i class="fas fa-arrow-down"></i>
+                                  {{/if}}
+                                  {{#if (eq pressureTrend "steady")}}
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                  {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-flex is-4-desktop">
+                <div class="card events-card">
+                    <header class="card-header has-thin-border-bottom is-shadowless p-2">
+                        <p class="card-header-title is-size-3">
+                            Latest Reading
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="is-fullwidth">
+                                <table class="table is-fullwidth">
+                                    <tbody>
+                                    <tr>
+                                        <td class="set-width has-background-grey-dark has-text-centered has-text-white is-vcentered has-text-weight-bold p-0"
+                                            style="width: 15%;">
+                                            <img src="../images/icons/clock.svg"
+                                                 alt="date">
+                                        </td>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-white is-vcentered has-text-weight-bold pl-0"
+                                                style="width: 25%;">Date/Time
+                                        </td>
+                                        <td class="is-vcentered" style="width: 60%;">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="set-width has-background-grey-dark has-text-centered has-text-white is-vcentered has-text-weight-bold p-0"
+                                            style="width: 15%;">
+                                            <img src="../images/icons/{{weatherIcon weather}}.svg"
+                                                 alt="weather">
+                                        </td>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-white is-vcentered has-text-weight-bold pl-0"
+                                                style="width: 25%;">Weather
+                                        </td>
+                                        <td class="is-vcentered" style="width: 60%;">
+                                            {{code}} |
+                                            {{weather}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-centered has-text-white is-vcentered has-text-weight-bold p-0"
+                                                style="width: 10%;">
+                                            <img src="../images/icons/thermometer.svg"
+                                                 alt="temperature">
+                                        </td>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-white is-vcentered has-text-weight-bold pl-0"
+                                                style="width: 30%;">Temperature
+                                        </td>
+                                        <td class="is-vcentered" style="width: 60%;">
+                                            {{tempC}} &#176C <br>
+                                            {{tempF}} &#176F
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-centered has-text-white is-vcentered has-text-weight-bold p-0"
+                                                style="width: 10%;">
+                                            <img src="../images/icons/wind-{{beaufort}}.svg"
+                                                 alt="wind">
+                                        </td>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-white is-vcentered has-text-weight-bold pl-0"
+                                                style="width: 30%;">Wind
+                                        </td>
+                                        <td class="is-vcentered" style="width: 60%;">
+                                            {{windSpeed}} km/h |
+
+                                            <span title="${utils.Conversion.beaufortDescription(_station.getLatestWindBeaufort())}">{{beaufort}} bft</span>
+                                            <br>
+                                            Feels Like: {{windChill}}&#176C<br>
+                                            Direction: {{windDirection}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-centered has-text-white is-vcentered has-text-weight-bold p-0"
+                                                style="width: 10%;">
+                                            <img src="../images/icons/barometer.svg" alt="pressure">
+                                        </td>
+                                        <td
+                                                class="set-width has-background-grey-dark has-text-white is-vcentered has-text-weight-bold pl-0"
+                                                style="width: 30%;">Pressure
+                                        </td>
+                                        <td class="is-vcentered" style="width: 60%;">
+                                            {{pressure}} hPa
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </article>
-  </div>
-</div>
+    </div>
+</section>
