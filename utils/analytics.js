@@ -20,6 +20,9 @@ export const Analytics = {
       station.minPressure = this.minPressure(station.readings);
       station.windChill = Conversion.calculateWindChill(lastReading.temperature, lastReading.windSpeed);
       station.windDirection = Conversion.windDirectionToCompass(lastReading.windDirection);
+      station.pressureTrend = this.getTrend(station.readings, 'pressure');
+      station.tempTrend = this.getTrend(station.readings, 'temp');
+      station.windSpeedTrend = this.getTrend(station.readings, 'windSpeed');
     }
   },
   maxTemp(readings) {
@@ -40,4 +43,25 @@ export const Analytics = {
   minPressure(readings) {
     return MaxMin.min(readings.map((reading) => reading.pressure));
   },
+  getTrend(readings, field) {
+    if (readings.length < 3) {
+      return "";
+    }
+  
+    const lastThreeReadings = readings.slice(-3).map(reading => reading[field]);
+    const [lastReading, secondLastReading, thirdLastReading] = lastThreeReadings;
+  
+    const isIncreasing = (lastReading - secondLastReading) > 0 && (secondLastReading - thirdLastReading) > 0;
+    const isDecreasing = (lastReading - secondLastReading) < 0 && (secondLastReading - thirdLastReading) < 0;
+  
+    if (isIncreasing) {
+      return "Increasing";
+    }
+
+    if (isDecreasing) {
+      return "Decreasing";
+    }
+
+    return "Steady";
+  }
 };
