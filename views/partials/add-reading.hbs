@@ -1,45 +1,49 @@
 <form class="box" action="/station/{{_id}}/add" method="POST">
-  <div class="field">
-    <label class="label">Code</label>
-    <div class="control">
-      <div class="select is-fullwidth">
-        <select name="code">
-          <option value=""></option>
-          <option value="100">100 - Clear</option>
-          <option value="200">200 - Partial Clouds</option>
-          <option value="300">300 - Cloudy</option>
-          <option value="400">400 - Light Showers</option>
-          <option value="500">500 - Heavy Showers</option>
-          <option value="600">600 - Rain</option>
-          <option value="700">700 - Snow</option>
-          <option value="800">800 - Thunder</option>
-        </select>
-      </div>
+    <div class="columns is-mobile">
+        <div class="field column is-full-mobile is-one-sixth-desktop">
+            <div class="control">
+                <div class="select is-fullwidth">
+                    <select name="code">
+                        <option value="" disabled selected hidden>Weather Code</option>
+                        <option value="100">100 - Clear</option>
+                        <option value="200">200 - Partial Clouds</option>
+                        <option value="300">300 - Cloudy</option>
+                        <option value="400">400 - Light Showers</option>
+                        <option value="500">500 - Heavy Showers</option>
+                        <option value="600">600 - Rain</option>
+                        <option value="700">700 - Snow</option>
+                        <option value="800">800 - Thunder</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="field column is-full-mobile is-one-sixth-desktop">
+            <div class="control">
+                <input type="number" step="any" class="input" min="-50" max="50" placeholder="Temperature"
+                       name="temperature" required>
+            </div>
+        </div>
+        <div class="field column is-full-mobile is-one-sixth-desktop">
+            <div class="control">
+                <input type="number" step="any" class="input" min="0" max="117" placeholder="Wind Speed"
+                       name="windSpeed" required>
+            </div>
+        </div>
+        <div class="field column is-full-mobile is-one-sixth-desktop">
+            <div class="control">
+                <input type="number" step="any" class="input" min="0" max="360" placeholder="Wind Direction"
+                       name="windDirection" required>
+            </div>
+        </div>
+        <div class="field column is-full-mobile is-one-sixth-desktop">
+            <div class="control">
+                <input type="number" class="input" min="100" max="1050" placeholder="Pressure" name="pressure" required>
+            </div>
+        </div>
+        <div class="field column is-full-mobile is-one-sixth-desktop">
+            <div class="control">
+                <button class="button is-link is-info is-fullwidth">Add Reading</button>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label">Temperature</label>
-    <div class="control">
-      <input type="number" step="any" class="input" placeholder="Temperature" name="temperature" />
-    </div>
-  </div>
-  <div class="field">
-    <label class="label">Wind Speed</label>
-    <div class="control">
-      <input type="number" step="any" class="input" placeholder="Wind Speed" name="windSpeed" />
-    </div>
-  </div>
-  <div class="field">
-    <label class="label">Wind Direction</label>
-    <div class="control">
-      <input type="number" step="any" class="input" placeholder="Wind Direction" name="windDirection" />
-    </div>
-  </div>
-  <div class="field">
-    <label class="label">Pressure</label>
-    <div class="control">
-      <input type="number" class="input" placeholder="Pressure" name="pressure" />
-    </div>
-  </div>
-  <button class="button is-link is-info">Add Reading</button>
 </form>

@@ -19,7 +19,6 @@ export const stationController = {
     }
 
     Analytics.updateWeather(station);
-    console.log(station);
     const viewData = {
       ...station,
       flash: request.flash,

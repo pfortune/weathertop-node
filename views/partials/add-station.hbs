@@ -1,21 +1,16 @@
 <form class="box" action="/dashboard/add" method="POST">
-  <div class="columns is-multiline is-mobile">
-    <div class="field column is-full-mobile is-4-desktop">
-      <label class="label">Title</label>
-      <input class="input is small" placeholder="Title" type="text" name="title" />
+    <div class="columns is-multiline is-mobile">
+        <div class="field column is-full-mobile is-3-desktop">
+            <input class="input is small" placeholder="Title" type="text" name="title">
+        </div>
+        <div class="field column is-full-mobile is-3-desktop">
+            <input class="input is small" placeholder="Latitude" type="number" step="any" name="latitude" required>
+        </div>
+        <div class="field column is-full-mobile is-3-desktop">
+            <input class="input is small" placeholder="Longitude" type="number" step="any" name="longitude" required>
+        </div>
+        <div class="column is-full-mobile is-3-desktop">
+            <button class="button is-link is-info is-fullwidth">Add Station</button>
+        </div>
     </div>
-    <div class="field column is-full-mobile is-4-desktop">
-      <label class="label">Latitude</label>
-      <input class="input is small" placeholder="Latitude" type="number" step="any" name="latitude" required />
-    </div>
-    <div class="field column is-full-mobile is-4-desktop">
-      <label class="label">Longitude</label>
-      <input class="input is small" placeholder="Longitude" type="number" step="any" name="longitude" required />
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column">
-      <button class="button is-link is-info is-fullwidth">Add Station</button>
-    </div>
-  </div>
 </form>

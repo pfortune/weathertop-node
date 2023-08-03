@@ -1,16 +1,21 @@
-<table class="table is-striped is-hoverable">
-  <thead>
+<table class="table is-striped mt-5">
+    <thead>
     <tr>
-      <th>Weather Code</th>
-      <th>Temperature °C</th>
-      <th>Wind Speed (km/h)</th>
-      <th>Wind Direction</th>
-      <th>Pressure</th>
+        <th>Date/Time</th>
+        <th>Weather Code</th>
+        <th>Temperature</th>
+        <th>Wind Speed/Chill</th>
+        <th>Wind Direction</th>
+        <th>Pressure</th>
+        <th>Delete</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     {{#each readings}}
       <tr>
+        <td>
+          
+        </td>
         <td>
           {{code}}
         </td>
@@ -26,7 +31,14 @@
         <td>
           {{pressure}}
         </td>
-      </tr>
+        <td>
+          <a id="delete" data-link="/station/${_station.id}/delete/${reading.id}">
+            <div class="buttons">
+              <button class="button is-danger">Delete</button>
+            </div>
+          </a>
+        </td>
+    </tr>
     {{/each}}
   </tbody>
 </table>

@@ -1,12 +1,23 @@
 {{#each stations}}
 
-<div class="content box">
-    <h1 class="title">
-        {{ title }}
-    </h1>
-    <a href="/station/{{_id}}" class="button">
-        {{> icons/open }}
-    </a>
-</div>
+  <div class="content box">
+    {{#if readings}}
+        {{> card-readings}}
+    {{/if}}
+    <div class="card-footer mt-4">
+      <a href="/station/{{_id}}" class="card-footer-item has-background-success has-text-white">
+        <span>View Station</span>
+      </a>
+      <a
+        id="delete"
+        class="card-footer-item has-background-danger has-text-white"
+        data-link="/dashboard/{{_id}}/delete"
+      >
+        <div class="container is-fullwidth has-text-centered">
+          <span>Delete Station</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
 {{/each}}

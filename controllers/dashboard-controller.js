@@ -1,4 +1,6 @@
 import { stationStore } from "../models/station-store.js";
+import { readingStore } from "../models/reading-store.js";
+import { Analytics } from "../utils/analytics.js";
 
 export const dashboardController = {
   async index(request, response) {
@@ -10,7 +12,14 @@ export const dashboardController = {
 
     // Fetch stations only belonging to the logged-in user
     const stations = await stationStore.getStationsByUserId(request.user._id);
+
+    for (const station of stations) {
+      station.readings = await readingStore.getReadingsByStationId(station._id);
+      Analytics.updateWeather(station);
+    }
     
+    console.log(stations);
+
     const viewData = {
       title: "Dashboard",
       stations,
