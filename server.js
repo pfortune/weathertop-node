@@ -3,8 +3,9 @@ import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 import { engine } from "express-handlebars";
 import { router } from "./routes.js";
-import './helpers/weather-icon.js';
-import './helpers/eq.js';
+import './helpers/icon-helper.js';
+import './helpers/eq-helper.js';
+import './helpers/math-helper.js';
 
 const app = express();
 app.use(cookieParser());
