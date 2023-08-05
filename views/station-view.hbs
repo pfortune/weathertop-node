@@ -7,17 +7,7 @@ marker={{latitude}}%2C{{longitude}}">
 </iframe>
 
 
-{{#if flash.error}}
-<div id="flash_message" class="flash-error notification is-danger">
-  {{flash.error}}
-</div>
-{{/if}}
-
-{{#if flash.success}}
-<div id="flash_message" class="flash-success notification is-success">
-  {{flash.success}}
-</div>
-{{/if}}
+{{> flash-messages}}
 
 {{> add-reading}}
 

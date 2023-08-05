@@ -1,6 +1,6 @@
 {
   "name": "weathertop-node",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "description": "WeatherTop is a companion web application designed for WeatherTop 1000, a modular weather station built with Express, Node & Handlebars.",
   "main": "server.js",
   "type": "module",

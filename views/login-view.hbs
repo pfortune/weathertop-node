@@ -6,19 +6,7 @@
       <form class="ui stacked segment form" action="/authenticate" method="POST">
         <h2 class="has-text-centered title">Log-in</h2>
 
-        <!-- Flash message section -->
-        {{#if flash.error}}
-        <div id="flash_message" class="flash-error notification is-danger">
-          {{flash.error}}
-        </div>
-        {{/if}}
-
-        {{#if flash.success}}
-        <div id="flash_message" class="flash-success notification is-success">
-          {{flash.success}}
-        </div>
-        {{/if}}
-        <!-- End of Flash message section -->
+        {{> flash-messages}}
 
         <div class="field">
           <p class="control has-icons-left has-icons-right">
