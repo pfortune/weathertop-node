@@ -33,8 +33,8 @@ router.get("/register", authController.register);
 router.post("/register", authController.registerUser);
 router.post("/authenticate", authController.authenticate);
 router.get("/logout", authController.logout);
-// router.get("/account", authController.showAccount);
-// router.post("/account", authController.updateAccount);
+router.get("/account", authController.showAccount);
+router.post("/account", authController.updateAccount);
 
 // About page
 router.get("/about", aboutController.index);

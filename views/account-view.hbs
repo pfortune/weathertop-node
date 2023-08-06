@@ -1,0 +1,77 @@
+{{> menu active="account"}}
+<div class="container mt-6 mb-6">
+  <div class="columns is-centered">
+    <div class="column is-4">
+      <form class="ui stacked segment form" action="/account" method="POST">
+        <h3 class="title has-text-centered">Update Details</h3>
+
+        {{> flash-messages}}
+
+        <div class="field">
+          <p class="control has-icons-left">
+            <input
+              class="input"
+              type="text"
+              placeholder="First Name"
+              name="firstname"
+              value="{{firstname}}"
+              required
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input
+              class="input"
+              type="text"
+              placeholder="Last Name"
+              name="lastname"
+              value="{{lastname}}"
+              required
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" name="email" value="{{email}}" required />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input
+              class="input"
+              type="password"
+              placeholder="Password (Leave blank to keep current password)"
+              name="password"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>            
+            </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-success">
+              Update
+            </button>
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="column is-4">
+      <img src="../images/profile.png" />
+    </div>
+  </div>
+</div>

@@ -6,16 +6,11 @@ bbox={{subtract longitude 0.005}}%2C{{subtract latitude 0.005}}%2C{{add longitud
 marker={{latitude}}%2C{{longitude}}">
 </iframe>
 
-
 {{> flash-messages}}
 
 {{> add-reading}}
 
 <div class="content box">
-    <h1 class="title">
-        {{ title }}
-    </h1>
-
     {{#if readings}}
         {{> card-readings}}
         {{> list-readings}}
