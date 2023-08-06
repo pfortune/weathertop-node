@@ -1,5 +1,6 @@
 import { MaxMin } from "./max-min.js";
 import { Conversion } from "./conversion.js";
+import { Trend } from "./trends.js";
 
 export const Analytics = {
   updateWeather(station) {
@@ -9,59 +10,20 @@ export const Analytics = {
       station.weather = Conversion.weatherCodeToCondition(lastReading.code);
       station.tempC = lastReading.temperature;
       station.tempF = Conversion.celsiusToFahrenheit(lastReading.temperature);
-      station.maxTemp = this.maxTemp(station.readings);
-      station.minTemp = this.minTemp(station.readings);
+      station.maxTemp = MaxMin.maxTemp(station.readings);
+      station.minTemp = MaxMin.minTemp(station.readings);
       station.windSpeed = lastReading.windSpeed;
       station.beaufort = Conversion.kmhToBeaufort(lastReading.windSpeed);
-      station.maxWindSpeed = this.maxWindSpeed(station.readings);
-      station.minWindSpeed = this.minWindSpeed(station.readings);
+      station.maxWindSpeed = MaxMin.maxWindSpeed(station.readings);
+      station.minWindSpeed = MaxMin.minWindSpeed(station.readings);
       station.pressure = lastReading.pressure;
-      station.maxPressure = this.maxPressure(station.readings);
-      station.minPressure = this.minPressure(station.readings);
+      station.maxPressure = MaxMin.maxPressure(station.readings);
+      station.minPressure = MaxMin.minPressure(station.readings);
       station.windChill = Conversion.calculateWindChill(lastReading.temperature, lastReading.windSpeed);
       station.windDirection = Conversion.windDirectionToCompass(lastReading.windDirection);
-      station.pressureTrend = this.getTrend(station.readings, 'pressure');
-      station.tempTrend = this.getTrend(station.readings, 'temp');
-      station.windSpeedTrend = this.getTrend(station.readings, 'windSpeed');
+      station.pressureTrend = Trend.getTrend(station.readings, 'pressure');
+      station.tempTrend = Trend.getTrend(station.readings, 'temp');
+      station.windSpeedTrend = Trend.getTrend(station.readings, 'windSpeed');
     }
-  },
-  maxTemp(readings) {
-    return MaxMin.max(readings.map((reading) => reading.temperature));
-  },
-  minTemp(readings) {
-    return MaxMin.min(readings.map((reading) => reading.temperature));
-  },
-  maxWindSpeed(readings) {
-    return MaxMin.max(readings.map((reading) => reading.windSpeed));
-  },
-  minWindSpeed(readings) {
-    return MaxMin.min(readings.map((reading) => reading.windSpeed));
-  },
-  maxPressure(readings) {
-    return MaxMin.max(readings.map((reading) => reading.pressure));
-  },
-  minPressure(readings) {
-    return MaxMin.min(readings.map((reading) => reading.pressure));
-  },
-  getTrend(readings, field) {
-    if (readings.length < 3) {
-      return "";
-    }
-  
-    const lastThreeReadings = readings.slice(-3).map(reading => reading[field]);
-    const [lastReading, secondLastReading, thirdLastReading] = lastThreeReadings;
-  
-    const isIncreasing = (lastReading - secondLastReading) > 0 && (secondLastReading - thirdLastReading) > 0;
-    const isDecreasing = (lastReading - secondLastReading) < 0 && (secondLastReading - thirdLastReading) < 0;
-  
-    if (isIncreasing) {
-      return "Increasing";
-    }
-
-    if (isDecreasing) {
-      return "Decreasing";
-    }
-
-    return "Steady";
   }
 };

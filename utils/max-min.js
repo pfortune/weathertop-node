@@ -1,8 +1,20 @@
 export const MaxMin = {
-  max(values) {
-    return Math.max(...values);
+  maxTemp(readings) {
+    return Math.max(...readings.map((reading) => reading.temperature));
   },
-  min(values) {
-    return Math.min(...values);
+  minTemp(readings) {
+    return Math.min(...readings.map((reading) => reading.temperature));
+  },
+  maxWindSpeed(readings) {
+    return Math.max(...readings.map((reading) => reading.windSpeed));
+  },
+  minWindSpeed(readings) {
+    return Math.min(...readings.map((reading) => reading.windSpeed));
+  },
+  maxPressure(readings) {
+    return Math.max(...readings.map((reading) => reading.pressure));
+  },
+  minPressure(readings) {
+    return Math.min(...readings.map((reading) => reading.pressure));
   },
 };
