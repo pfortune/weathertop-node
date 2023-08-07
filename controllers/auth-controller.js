@@ -54,7 +54,7 @@ export const authController = {
       response.redirect("/register");
       return;
     } else {
-      if (!this.isValidPassword(password)) {
+      if (!authController.isValidPassword(password)) {
         response.cookie('flash_error', 'Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, and one number.', { maxAge: 10000 });
         response.redirect("/register");
         return;
@@ -121,7 +121,7 @@ export const authController = {
     if(!password) {
       await userStore.updateUser(user._id, { firstname, lastname, email });
     } else {
-      if (!this.isValidPassword(password)) {
+      if (!authController.isValidPassword(password)) {
         response.cookie('flash_error', 'Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, and one number.', { maxAge: 10000 });
         response.redirect("/account");
         return;

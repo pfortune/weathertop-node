@@ -18,8 +18,6 @@ export const stationController = {
       return;
     }
 
-    
-
     Analytics.updateWeather(station);
     const viewData = {
       ...station,
@@ -75,7 +73,6 @@ export const stationController = {
      hour12: false 
     });
 
-    console.log(this);
     let parts = dateTime.split(', ');
     let dateParts = parts[0].split('/');
     dateTime = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]} ${parts[1]}`;
