@@ -7,6 +7,7 @@ export const Analytics = {
     if (station.readings.length > 0) {
       const lastReading = station.readings[station.readings.length - 1];
       station.code = lastReading.code;
+      station.timestamp = lastReading.timestamp;
       station.weather = Conversion.weatherCodeToCondition(lastReading.code);
       station.tempC = lastReading.temperature;
       station.tempF = Conversion.celsiusToFahrenheit(lastReading.temperature);

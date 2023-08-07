@@ -5,7 +5,7 @@ import { Analytics } from "../utils/analytics.js";
 export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
-    
+
     if (!request.user) {
       response.redirect("/login");
       return;
@@ -18,11 +18,15 @@ export const stationController = {
       return;
     }
 
+    
+
     Analytics.updateWeather(station);
     const viewData = {
       ...station,
       flash: request.flash,
     };
+
+    console.log(station);
 
     console.log("-- station rendered");
     response.render("station-view", viewData);
@@ -35,7 +39,9 @@ export const stationController = {
     }
 
     const station = await stationStore.getStationById(request.params.id);
+
     const { code, temperature, windSpeed, pressure, windDirection } = request.body;
+    const timestamp = stationController.formatDate(new Date());
 
     // Validation
     if (!code || !temperature || !windSpeed || !pressure || !windDirection) {
@@ -49,6 +55,7 @@ export const stationController = {
       temperature: parseInt(temperature),
       windSpeed: parseInt(windSpeed),
       pressure: parseInt(pressure),
+      timestamp,
       windDirection: parseInt(windDirection),
     };
 
@@ -56,4 +63,23 @@ export const stationController = {
     response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
     response.redirect(`/station/${station._id}`);
   },
+
+  formatDate (date) {
+    let dateTime = date.toLocaleString('en-GB', { 
+     year: 'numeric', 
+     month: '2-digit', 
+     day: '2-digit', 
+     hour: '2-digit', 
+     minute: '2-digit', 
+     second: '2-digit', 
+     hour12: false 
+    });
+
+    console.log(this);
+    let parts = dateTime.split(', ');
+    let dateParts = parts[0].split('/');
+    dateTime = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]} ${parts[1]}`;
+    
+    return dateTime;
+  }
 };
