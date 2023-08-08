@@ -1,47 +1,132 @@
 {{> menu active="about"}}
 
+{{#unless user}}
 <div class="content box">
-  <p class="title">
-    About WeatherTop Inc.
-  </p>
-  <p>
-    WeatherTop Inc. is a leading innovator in the world of meteorological technology, committed to providing
-    cost-effective and user-friendly solutions to weather enthusiasts and professionals alike. Our passion for
-    understanding and predicting weather patterns has led us to develop the WeatherTop 1000 - a versatile and modular
-    weather station designed to make meteorological data accessible to everyone.
-  </p>
+    <p class="title">
+        About WeatherTop Inc.
+    </p>
+    <p>
+        WeatherTop Inc. is a leading innovator in the world of meteorological technology, committed to providing
+        cost-effective and user-friendly solutions to weather enthusiasts and professionals alike. Our passion for
+        understanding and predicting weather patterns has led us to develop the WeatherTop 1000 - a versatile and
+        modular weather station designed to make meteorological data accessible to everyone.
+    </p>
 
-  <p class="title">
-    The WeatherTop 1000
-  </p>
+    <p class="title">
+        The WeatherTop 1000
+    </p>
 
-  <p>
-    The WeatherTop 1000 is a low-cost, high-performance weather station that provides accurate and real-time
-    meteorological readings, displayed on a simple LCD screen. This compact device is perfect for homeowners, hobbyists,
-    and educational institutions looking to monitor local weather conditions with ease.
-  </p>
+    <p>
+        The WeatherTop 1000 is a low-cost, high-performance weather station that provides accurate and real-time
+        meteorological readings, displayed on a simple LCD screen. This compact device is perfect for homeowners,
+        hobbyists, and educational institutions looking to monitor local weather conditions with ease.
+    </p>
 
-  <figure>
-    <img class="image w-400 has-image-centered" src="../images/weather-instrument.jpg" alt="WeatherTop 1000" />
-  </figure>
+    <figure>
+        <img class="image w-400 has-image-centered" src="../images/weather-instrument.jpg" alt="WeatherTop 1000">
+    </figure>
 
-  <p class="title">
-    Web Companion Application
-  </p>
-  <p>
-    To enhance the WeatherTop 1000 experience, we have developed a web companion application, which allows users to
-    access their weather data online. This application offers a dashboard view of meteorological readings, enabling
-    users to monitor multiple weather stations, view historical data, and gain valuable insights into local weather
-    patterns.
-  </p>
+    <p class="title">
+        Web Companion Application
+    </p>
+    <p>
+        To enhance the WeatherTop 1000 experience, we have developed a web companion application, which allows users to
+        access their weather data online. This application offers a dashboard view of meteorological readings, enabling
+        users to monitor multiple weather stations, view historical data, and gain valuable insights into local weather
+        patterns.
+    </p>
 
-  <p class="title">
-    Our Vision
-  </p>
-  <p>
-    At WeatherTop Inc., we believe that understanding the weather should be a universal pursuit. We are committed to
-    developing innovative and accessible solutions that empower individuals and communities to engage with
-    meteorological data in meaningful ways. Through our products and services, we strive to make weather monitoring and
-    analysis simple, efficient, and enjoyable.
-  </p>
+    <p class="title">
+        Our Vision
+    </p>
+    <p>
+        At WeatherTop Inc., we believe that understanding the weather should be a universal pursuit. We are committed to
+        developing innovative and accessible solutions that empower individuals and communities to engage with
+        meteorological
+        data in meaningful ways. Through our products and services, we strive to make weather monitoring and analysis
+        simple,
+        efficient, and enjoyable.
+    </p>
 </div>
+
+{{else}}
+
+<div class="content box">
+    <p class="title has-text-centered">
+        Your WeatherTop 1000 Experience
+    </p>
+    <p class="subtitle">Welcome to the enhanced WeatherTop 1000 platform. With our web companion application, you have instant online
+        access to your weather data. Explore both current and historical readings from your stations, and delve deep
+        into local weather patterns. This tool is designed to facilitate your understanding of your local environment,
+        bringing you closer to nature's rhythms. With WeatherTop 1000, your personalised weather analysis is just a few
+        clicks away. Experience weather monitoring made easy, intuitive, and interactive.</p>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Effortlessly Add New Weather Stations</h1>
+        <img class="image has-image-centered" src="../images/about/1.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            In just a few clicks, you can add new weather stations to your dashboard. This streamlined process makes
+            it easy for you to expand your network of weather data points, providing a more comprehensive understanding
+            of your local weather patterns.
+        </h3>
+    </section>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Manage Stations & Readings With Ease</h1>
+        <img class="image has-image-centered" src="../images/about/4.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            Our user-friendly interface allows you to view and manage your stations and readings all in one place. This
+            simple yet effective management tool ensures you can keep track of your data effortlessly.
+        </h3>
+    </section>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Accidental Deletion Safeguards in Place</h1>
+        <img class="image has-image-centered" src="../images/about/3.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            We understand that mistakes happen. That's why we've incorporated safeguards to prevent accidental deletion
+            of your valuable data. You can trust that your weather data is secure with us.
+        </h3>
+    </section>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Visualise Your Station's Location on Map</h1>
+        <img class="image has-image-centered" src="../images/about/5.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            Want to see where your station is located geographically? With our map view, you can visualise your
+            station's location in a glance, adding an extra dimension to your weather monitoring.
+        </h3>
+    </section>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Delve Into Comprehensive Weather Statistics</h1>
+        <img class="image has-image-centered" src="../images/about/2.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            Our platform provides a rich array of weather statistics, enabling you to gain deep insights into your
+            local weather patterns. These include temperature trends, wind speed data, and much more.
+        </h3>
+    </section>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Explore Detailed Readings in Tabular Format</h1>
+        <img class="image has-image-centered" src="../images/about/6.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            To facilitate easy reading and comparison, your weather data is presented in a clear and organised tabular
+            format. This allows you to review and analyse your readings in detail, helping you to make sense of your
+            weather data.
+        </h3>
+    </section>
+
+    <section class="section">
+        <h1 class="title has-text-centered">Customise Your Personal Profile</h1>
+        <img class="image has-image-centered" src="../images/about/7.jpg" alt="WeatherTop 1000">
+        <h3 class="subtitle">
+            Our application gives you the power to personalise your user experience. You can update key profile
+            information such as your first name, last name, email address, and even change your password if needed.
+            This feature ensures that your user profile always stays up-to-date and personalised to your preferences.
+        </h3>
+    </section>
+</div>
+
+
+{{/unless}}
