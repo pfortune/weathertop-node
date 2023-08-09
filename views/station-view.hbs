@@ -20,3 +20,12 @@ marker={{latitude}}%2C{{longitude}}">
     
 </div>
 
+<dialog id="confirmDeleteDialog">
+    <p class="title">Are you sure you want to delete this reading?</p>
+    <div class="has-text-centered">
+        <form id="deleteForm" method="POST" action="">
+            <button class="button is-danger" id="confirmDelete" type="submit">Yes, delete</button>
+        </form>
+        <button class="button is-light" id="cancelDelete">No, cancel</button>
+    </div>
+</dialog>

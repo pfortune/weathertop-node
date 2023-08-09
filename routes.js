@@ -19,13 +19,13 @@ router.get("/", homeController.index);
 // Dashboard page
 router.get("/dashboard", dashboardController.index);
 router.post("/dashboard/add", dashboardController.addStation);
-// router.post("/dashboard/delete", dashboardController.deleteStation);
+router.post("/dashboard/:id/delete", dashboardController.deleteStation);
 // router.get("/dashboard/page/:page", dashboardController.index);
 
 // Station page
 router.get("/station/:id", stationController.index);
 router.post("/station/:id/add", stationController.addReading);
-// router.post("/station/:id/delete", stationController.deleteReading);
+router.post("/station/:id/delete/:readingid", stationController.deleteReading);
 
 // Authentication
 router.get("/login", authController.login);

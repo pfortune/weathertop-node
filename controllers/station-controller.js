@@ -19,7 +19,7 @@ export const stationController = {
     }
 
     Analytics.updateWeather(station);
-    console.log(station);
+
     const viewData = {
       ...station,
       flash: request.flash,
@@ -59,6 +59,17 @@ export const stationController = {
     await readingStore.addReading(station._id, newReading);
     response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
     response.redirect(`/station/${station._id}`);
+  },
+
+  async deleteReading(request, response) {
+    if (!request.user) {
+      response.redirect("/login");
+      return;
+    }
+
+    const { id, readingid } = request.params;
+    await readingStore.deleteReading(readingid);
+    response.redirect(`/station/${id}`);
   },
 
   formatDate (date) {

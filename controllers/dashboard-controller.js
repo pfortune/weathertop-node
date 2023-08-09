@@ -63,4 +63,16 @@ export const dashboardController = {
       response.redirect("/dashboard");
     }
   },
+
+  async deleteStation(request, response) {
+    // Check if the user is logged in
+    if (!request.user) {
+      response.redirect("/login");
+      return;
+    }
+
+    const id = request.params.id;
+    await stationStore.deleteStationById(id);
+    response.redirect("/dashboard");
+  }
 };
