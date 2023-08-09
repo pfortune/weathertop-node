@@ -4,7 +4,7 @@
       <th>Date/Time</th>
       <th>Weather Code</th>
       <th>Temperature</th>
-      <th>Wind Speed/Chill</th>
+      <th>Wind Speed</th>
       <th>Wind Direction</th>
       <th>Pressure</th>
       <th>Delete</th>
@@ -32,7 +32,7 @@
           {{pressure}}
         </td>
         <td>
-          <a id="delete" data-link="/station/${_station.id}/delete/${reading.id}">
+          <a id="delete" data-link="/station/{{stationId}}/delete/{{_id}}">
             <div class="buttons">
               <button class="button is-danger">Delete</button>
             </div>

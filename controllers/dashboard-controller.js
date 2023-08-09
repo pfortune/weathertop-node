@@ -17,8 +17,6 @@ export const dashboardController = {
       station.readings = await readingStore.getReadingsByStationId(station._id);
       Analytics.updateWeather(station);
     }
-    
-    console.log(stations);
 
     const viewData = {
       title: "Dashboard",

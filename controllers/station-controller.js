@@ -19,12 +19,11 @@ export const stationController = {
     }
 
     Analytics.updateWeather(station);
+    console.log(station);
     const viewData = {
       ...station,
       flash: request.flash,
     };
-
-    console.log(station);
 
     console.log("-- station rendered");
     response.render("station-view", viewData);
