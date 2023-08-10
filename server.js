@@ -6,6 +6,7 @@ import { router } from "./routes.js";
 import './helpers/icon-helper.js';
 import './helpers/eq-helper.js';
 import './helpers/math-helper.js';
+import './helpers/conversion-helper.js';
 
 const app = express();
 app.use(cookieParser());
