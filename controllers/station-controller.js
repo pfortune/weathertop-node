@@ -4,8 +4,18 @@ import { Analytics } from "../utils/analytics.js";
 
 export const stationController = {
   async index(request, response) {
-    const station = await stationStore.getStationById(request.params.id);
 
+    let station;
+    
+    try {
+      station = await stationStore.getStationById(request.params.id);
+    } catch (error) {
+      console.error(error.message); // You can log the error for debugging
+      response.cookie("flash_error", "Station not found!", { maxAge: 10000 });
+      response.redirect('/dashboard');
+      return;
+    }
+    
     if (!request.user) {
       response.redirect("/login");
       return;
