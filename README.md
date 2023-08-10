@@ -1,4 +1,4 @@
-# WeatherTop Release 3
+# WeatherTop Release 4
 
 Live Glitch App: [https://weathertopnode.glitch.me](https://weathertopnode.glitch.me)
 
@@ -10,49 +10,27 @@ Password: secret
 
 ## Introduction
 
-WeatherTop Release 3 is the fifth and penultimate version of the WeatherTop web companion application designed for 
-WeatherTop 1000, a modular weather station. This version includes all features from the previous release, and adds 6 
-new features such as Trends, Date/Time stamp, All Stations Summary, Delete Support, Cloud Deployment, and Member Detail 
-Editing.
+WeatherTop Release 4 is the final and most advanced version of the WeatherTop web companion application designed for WeatherTop 1000, a modular weather station. Building upon the previous versions, this release adds powerful new features like Charts of Trends using Frappe Charts, OpenWeather API integration, and station location mapping with Leafletjs.
 
 ## Features
 
-- All features from Release 2
+- All features from Release 3
 - New Features:
-    1. Trends
-    2. Date/Time Stamp on Each Reading
-    3. All Stations Summary
-    4. Station/Reading Delete Support
-    5. Deployed to the Cloud
-    6. Members Can Edit Their Personal Details
+    1. Chart of Trends for Temperature, Pressure, and Wind Speed
+    2. OpenWeather API Integration
+    3. Map of Stations with Leafletjs on Dashboard
 
-### Trends
+### Chart of Trends for Temperature, Pressure, and Wind Speed
 
-Trends are available for Temperature, Wind Speed and Pressure. A trend can be:
+Using Frappe Charts, the Station page now displays visually engaging charts showing trends in Temperature, Pressure, and Wind Speed.
 
-- Rising (📈): the three most recent measurements are increasing
-- Falling (📉): the three most recent measurements are falling
-- Steady: neither of the above
+### OpenWeather API Integration
 
-### Date/Time Stamp on Each Reading
+This feature allows users to automatically generate the latest reading for their weather stations using the OpenWeather API, making real-time data tracking more efficient.
 
-Each reading is now timestamped with the current time and date.
+### Map of Stations with Leafletjs
 
-### All Stations Summary
-
-On the main dashboard, the latest conditions (excluding readings) for each station are displayed.
-
-### Station/Reading Delete Support
-
-Delete buttons have been added next to each reading and station for easier data management.
-
-### Deployed to the Cloud
-
-The application is now deployed to a cloud service for wider accessibility.
-
-### Members Can Edit Their Personal Details
-
-Members now have the option to edit their personal details.
+All the stations are now displayed on a map on the user's dashboard using Leafletjs. This visual representation enables easy navigation and understanding of station locations.
 
 ## Setup and Installation
 
@@ -66,10 +44,10 @@ Members now have the option to edit their personal details.
 ## Usage
 
 - Register or log in to the application upon launch.
-- Navigate to the Dashboard view to see the list of station names.
-- Click on the Folder button to open a station view and see the latest weather at that station.
+- Navigate to the Dashboard view to see the list of station names and map of stations.
+- Click on the View Station button to open a station view and see the latest weather at that station, along with trends charts.
 - Use the "Add Station" button to create a new station, making sure to include the station's location.
-- Add new readings to a station when it is opened.
+- Add new readings to a station when it is opened, or use OpenWeather API to auto generate the latest reading.
 - View the max/min readings and trends for temperature, wind speed, and pressure in the station report.
 - Delete readings and stations as needed.
 - Edit your personal details via the account settings.
