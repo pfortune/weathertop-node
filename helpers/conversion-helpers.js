@@ -12,6 +12,4 @@ Handlebars.registerHelper('kmhToBeaufort', kmhToBeaufort);
 Handlebars.registerHelper('windDirectionToCompass', windDirectionToCompass);
 Handlebars.registerHelper('calculateWindChill', calculateWindChill);
 Handlebars.registerHelper('weatherCodeToCondition', weatherCodeToCondition);
-Handlebars.registerHelper('beaufortDescription', function(windSpeed) {
-  return beaufortDescription(kmhToBeaufort(windSpeed));
-});
+Handlebars.registerHelper('beaufortDescription', windSpeed => beaufortDescription(kmhToBeaufort(windSpeed)));

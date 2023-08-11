@@ -3,10 +3,8 @@ import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 import { engine } from "express-handlebars";
 import { router } from "./routes.js";
-import './helpers/icon-helper.js';
-import './helpers/eq-helper.js';
-import './helpers/math-helper.js';
-import './helpers/conversion-helper.js';
+import './helpers/general-helpers.js';
+import './helpers/conversion-helpers.js';
 
 const app = express();
 app.use(cookieParser());
