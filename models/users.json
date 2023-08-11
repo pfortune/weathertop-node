@@ -2,17 +2,17 @@
   "file": "./models/users.json",
   "users": [
     {
-      "firstname": "Lisa",
+      "firstname": "Homer",
       "lastname": "Simpson",
       "email": "homer@simpson.com",
       "_id": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
-      "password": "secret3"
+      "password": "secret"
     },
     {
       "firstname": "Marge",
       "lastname": "Simpson",
       "email": "marge@simpson.com",
-      "password": "Secret123",
+      "password": "Password1",
       "_id": "b10d9b31-3f7e-4695-83ac-79549931ca53"
     }
   ]
