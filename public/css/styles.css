@@ -52,6 +52,10 @@ button.icon {
   font-size: 16px;
 }
 
+#cancelDelete {
+  margin-top: 1.15em;
+}
+
 #confirmDeleteDialog form {
   display: inline-block;
 }

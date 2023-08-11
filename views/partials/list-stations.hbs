@@ -3,6 +3,8 @@
   <div class="content box">
     {{#if readings}}
         {{> card-readings}}
+    {{else}}
+        <div>{{title}} has no readings yet. <a href="station/{{_id}}">Add one</a>!</div>
     {{/if}}
     <div class="card-footer mt-4">
       <a href="/station/{{_id}}" class="card-footer-item has-background-success has-text-white">
