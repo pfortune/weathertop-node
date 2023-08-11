@@ -17,16 +17,21 @@
           {{timestamp}}
         </td>
         <td>
-          {{code}}
+          {{code}}<br>
+          {{weatherCodeToCondition code}}
         </td>
         <td>
-          {{temperature}}
+          {{temperature}} °C <br>
+          {{celsiusToFahrenheit temperature}} °F
         </td>
         <td>
-          {{windSpeed}}
+          {{windSpeed}} kmh | <span
+                title="{{beaufortDescription}}">{{kmhToBeaufort windSpeed}} bft</span><br>
+          {{calculateWindChill temperature windSpeed}} °C
         </td>
         <td>
-          {{windDirection}}
+          {{windDirection}} °<br>
+          {{windDirectionToCompass windDirection}}
         </td>
         <td>
           {{pressure}}

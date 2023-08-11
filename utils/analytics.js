@@ -1,6 +1,12 @@
-import * as MaxMin from "./max-min.js";
-import * as Conversion from './conversion.js';
-import { Trend } from "./trends.js";
+import { maxTemp, minTemp, maxPressure, minPressure, maxWindSpeed, minWindSpeed } from "./max-min.js";
+import {
+  weatherCodeToCondition,
+  celsiusToFahrenheit,
+  calculateWindChill,
+  windDirectionToCompass,
+  kmhToBeaufort
+} from "./conversion.js";
+import { trend } from "./trends.js";
 
 export const Analytics = {
   updateWeather(station) {
@@ -15,21 +21,21 @@ export const Analytics = {
         pressure,
         windSpeed,
         timestamp,
-        weather: Conversion.weatherCodeToCondition(code),
+        weather: weatherCodeToCondition(code),
         tempC: temperature,
-        tempF: Conversion.celsiusToFahrenheit(temperature),
-        maxTemp: MaxMin.maxTemp(readings),
-        minTemp: MaxMin.minTemp(readings),
-        beaufort: Conversion.kmhToBeaufort(windSpeed),
-        maxWindSpeed: MaxMin.maxWindSpeed(readings),
-        minWindSpeed: MaxMin.minWindSpeed(readings),
-        maxPressure: MaxMin.maxPressure(readings),
-        minPressure: MaxMin.minPressure(readings),
-        windChill: Conversion.calculateWindChill(temperature, windSpeed),
-        windDirectionCompass: Conversion.windDirectionToCompass(windDirection),
-        pressureTrend: Trend.getTrend(readings, 'pressure'),
-        tempTrend: Trend.getTrend(readings, 'temp'),
-        windSpeedTrend: Trend.getTrend(readings, 'windSpeed'),
+        tempF: celsiusToFahrenheit(temperature),
+        maxTemp: maxTemp(readings),
+        minTemp: minTemp(readings),
+        beaufort: kmhToBeaufort(windSpeed),
+        maxWindSpeed: maxWindSpeed(readings),
+        minWindSpeed: minWindSpeed(readings),
+        maxPressure: maxPressure(readings),
+        minPressure: minPressure(readings),
+        windChill: calculateWindChill(temperature, windSpeed),
+        windDirectionCompass: windDirectionToCompass(windDirection),
+        pressureTrend: trend(readings, "pressure"),
+        tempTrend: trend(readings, "temp"),
+        windSpeedTrend: trend(readings, "windSpeed"),
       });
     }
   },

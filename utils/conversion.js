@@ -5,7 +5,7 @@
  * @return Temperature in Fahrenheit
  */
 export function celsiusToFahrenheit(celsius) {
-  return (celsius * 9) / 5 + 32;
+  return ((celsius * 9) / 5 + 32).toFixed(1);
 }
 
 /**
@@ -72,7 +72,7 @@ export function calculateWindChill(temperature, windSpeed) {
     0.6215 * temperature -
     11.37 * Math.pow(windSpeed, 0.16) +
     0.3965 * temperature * Math.pow(windSpeed, 0.16)
-  ).toFixed(2);
+  ).toFixed(1);
 }
 
 /**

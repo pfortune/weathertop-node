@@ -4,7 +4,6 @@ import { Analytics } from "../utils/analytics.js";
 
 export const stationController = {
   async index(request, response) {
-
     let station;
     
     try {
