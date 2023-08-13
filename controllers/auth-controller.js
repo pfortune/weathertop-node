@@ -123,7 +123,7 @@ export const authController = {
       await userStore.updateUser(user._id, { firstname, lastname, email });
     } else {
       if (!authController.isValidPassword(password)) {
-        response.cookie('flash_error', 'Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, and one number.', { maxAge: 10000 });
+        response.cookie('flash_error', 'Password must be at least 8 characters long and include at least one number.', { maxAge: 10000 });
         response.redirect("/account");
         return;
       }
@@ -135,6 +135,6 @@ export const authController = {
   },
 
   isValidPassword(password) {
-    return password.match("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}");
+    return password.match("(?=.*[0-9]).{8,}");
   }
 };

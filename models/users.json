@@ -14,13 +14,6 @@
       "email": "marge@simpson.com",
       "password": "Password1",
       "_id": "b10d9b31-3f7e-4695-83ac-79549931ca53"
-    },
-    {
-      "firstname": "Peter",
-      "lastname": "Fortune",
-      "email": "pfortune@gmail.com",
-      "password": "HJ12ASkl",
-      "_id": "694a0b99-9d7f-4459-a373-201cee43d15c"
     }
   ]
 }
