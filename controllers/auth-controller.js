@@ -29,6 +29,7 @@ export const authController = {
 
   async registerUser(request, response) {
     const { firstname, lastname, email, password } = request.body;
+    let user;
 
     if (request.user) {
       response.redirect("/dashboard");
@@ -59,7 +60,7 @@ export const authController = {
         response.redirect("/register");
         return;
       }
-      const user = await userStore.addUser({ firstname, lastname, email, password });
+      user = await userStore.addUser({ firstname, lastname, email, password });
     }
 
     response.cookie('user_id', user._id);
