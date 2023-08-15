@@ -1,7 +1,8 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
+import { generateReading } from "../utils/openweather.js";
 import { Analytics } from "../utils/analytics.js";
-import { formatDate } from "../utils/date.js";
+import { formatDate } from "../utils/dateformat.js";
 
 export const stationController = {
   async index(request, response) {
@@ -69,6 +70,31 @@ export const stationController = {
     await readingStore.addReading(station._id, newReading);
     response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
     response.redirect(`/station/${station._id}`);
+  },
+
+  async addReadingFromAPI(request, response) {
+    if (!request.user) {
+      response.redirect("/login");
+      return;
+    }
+
+    const station = await stationStore.getStationById(request.params.id);
+
+    console.log("auto reading ---");
+
+
+    // const newReading = {
+    //   code: parseInt(code),
+    //   temperature: parseInt(temperature),
+    //   windSpeed: parseInt(windSpeed),
+    //   pressure: parseInt(pressure),
+    //   timestamp,
+    //   windDirection: parseInt(windDirection),
+    // };
+
+    // await readingStore.addReading(station._id, newReading);
+    // response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
+    // response.redirect(`/station/${station._id}`);
   },
 
   async deleteReading(request, response) {

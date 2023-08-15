@@ -26,6 +26,7 @@ router.post("/dashboard/:id/delete", dashboardController.deleteStation);
 router.get("/station/:id", stationController.index);
 router.post("/station/:id/add", stationController.addReading);
 router.post("/station/:id/delete/:readingid", stationController.deleteReading);
+router.post("/station/:id/auto", stationController.addReadingFromAPI);
 
 // Authentication
 router.get("/login", authController.login);
