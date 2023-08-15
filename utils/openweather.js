@@ -4,8 +4,8 @@ import axios from "axios";
 const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 const BASE_URL = "https://api.openweathermap.org/data/3.0/onecall";
 
-export async function generateReading({ latitude, longitude }) {
-  const requestUrl = buildUrl({ latitude, longitude });
+export async function generateReading({ latitude, longitude, exclude }) {
+  const requestUrl = buildUrl({ latitude, longitude, exclude });
 
   try {
     const response = await axios.get(requestUrl);
