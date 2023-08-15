@@ -1,22 +1,22 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 import { generateReading } from "../utils/openweather.js";
-import { Analytics } from "../utils/analytics.js";
-import { formatDate } from "../utils/dateformat.js";
+import { Analytics } from "../utils/analytics-utils.js";
+import { formatDate } from "../utils/date-utils.js";
 
 export const stationController = {
   async index(request, response) {
     let station;
-    
+
     try {
       station = await stationStore.getStationById(request.params.id);
     } catch (error) {
       console.error(error.message); // You can log the error for debugging
       response.cookie("flash_error", "Station not found!", { maxAge: 10000 });
-      response.redirect('/dashboard');
+      response.redirect("/dashboard");
       return;
     }
-    
+
     if (!request.user) {
       response.redirect("/login");
       return;
@@ -82,7 +82,6 @@ export const stationController = {
 
     console.log("auto reading ---");
 
-
     // const newReading = {
     //   code: parseInt(code),
     //   temperature: parseInt(temperature),
@@ -106,5 +105,5 @@ export const stationController = {
     const { id, readingid } = request.params;
     await readingStore.deleteReading(readingid);
     response.redirect(`/station/${id}`);
-  }
+  },
 };

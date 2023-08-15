@@ -1,20 +1,26 @@
-import { maxTemp, minTemp, maxPressure, minPressure, maxWindSpeed, minWindSpeed } from "./max-min.js";
+import { maxTemp, minTemp, maxPressure, minPressure, maxWindSpeed, minWindSpeed } from "./max-min-utils.js";
 import {
   weatherCodeToCondition,
   celsiusToFahrenheit,
   calculateWindChill,
   windDirectionToCompass,
-  kmhToBeaufort
-} from "./conversion.js";
-import { trend } from "./trends.js";
+  kmhToBeaufort,
+} from "./conversion-utils.js";
+import { trend } from "./trends-utils.js";
 
 export const Analytics = {
+    /**
+   * Update weather station data with the latest reading, including
+   * calculating various statistics and trends.
+   * @param {Object} station - The weather station object containing readings
+   */
   updateWeather(station) {
     const { readings } = station;
     if (readings.length > 0) {
       const lastReading = readings[readings.length - 1];
       const { code, temperature, windSpeed, pressure, windDirection, timestamp } = lastReading;
 
+      // Assign new values and calculations to the station object
       Object.assign(station, {
         code,
         windDirection,

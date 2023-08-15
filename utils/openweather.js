@@ -1,10 +1,6 @@
-import { formatDate } from './dateformat.js';
-import * as axios from 'axios';
+import { formatDate } from "./date-utils.js";
+import * as axios from "axios";
 
-export async function generateReading({latitude, longititude, apiKey}){
+export async function generateReading({ latitude, longititude, apiKey }) {}
 
-}
-
-function buildUrl() {
-
-}
+function buildUrl() {}

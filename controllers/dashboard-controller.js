@@ -1,6 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
-import { Analytics } from "../utils/analytics.js";
+import { Analytics } from "../utils/analytics-utils.js";
 
 export const dashboardController = {
   async index(request, response) {
@@ -55,7 +55,7 @@ export const dashboardController = {
         title,
         userid: request.user._id, // Associate the station with the user
         latitude,
-        longitude
+        longitude,
       };
 
       await stationStore.addStation(newStation);
@@ -74,5 +74,5 @@ export const dashboardController = {
     const id = request.params.id;
     await stationStore.deleteStationById(id);
     response.redirect("/dashboard");
-  }
+  },
 };

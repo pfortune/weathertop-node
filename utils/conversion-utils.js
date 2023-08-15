@@ -2,7 +2,7 @@
  * Converts a temperature from Celsius to Fahrenheit.
  *
  * @param celsius Temperature in Celsius
- * @return Temperature in Fahrenheit
+ * @returns Temperature in Fahrenheit
  */
 export function celsiusToFahrenheit(celsius) {
   return ((celsius * 9) / 5 + 32).toFixed(1);
@@ -12,7 +12,7 @@ export function celsiusToFahrenheit(celsius) {
  * Converts a wind speed from kilometers per hour (km/h) to Beaufort scale.
  *
  * @param kmh Wind speed in kilometers per hour
- * @return Wind speed on the Beaufort scale
+ * @returns Wind speed on the Beaufort scale
  */
 export function kmhToBeaufort(kmh) {
   let limits = [1, 6, 12, 20, 29, 39, 50, 62, 75, 89, 103, 118];
@@ -30,7 +30,7 @@ export function kmhToBeaufort(kmh) {
  * Converts a wind direction in degrees to the corresponding compass direction.
  *
  * @param windDirection Wind direction in degrees
- * @return The corresponding compass direction
+ * @returns The corresponding compass direction
  */
 export function windDirectionToCompass(windDirection) {
   const compassDirections = [
@@ -63,7 +63,7 @@ export function windDirectionToCompass(windDirection) {
  *
  * @param temperature The temperature in degrees Celsius
  * @param windSpeed The wind speed in km/h
- * @return The wind chill in degrees Celsius
+ * @returns The wind chill in degrees Celsius
  */
 
 export function calculateWindChill(temperature, windSpeed) {
@@ -79,7 +79,7 @@ export function calculateWindChill(temperature, windSpeed) {
  * Returns the description corresponding to a Beaufort scale value.
  *
  * @param beaufortValue Beaufort scale value (0-12)
- * @return Description of the Beaufort scale value
+ * @returns Description of the Beaufort scale value
  */
 export function beaufortDescription(beaufortValue) {
   let descriptions = [
@@ -109,7 +109,7 @@ export function beaufortDescription(beaufortValue) {
  * Returns the description corresponding to a Weather code.
  *
  * @param weatherCode Weather code value (100 - 800)
- * @return Description of the Weather code value
+ * @returns Description of the Weather code value
  */
 export function weatherCodeToCondition(code) {
   switch (code) {
