@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express from "express";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
@@ -5,6 +6,8 @@ import { engine } from "express-handlebars";
 import { router } from "./routes.js";
 import './helpers/general-helpers.js';
 import './helpers/conversion-helpers.js';
+
+dotenv.config();
 
 const app = express();
 app.use(cookieParser());
