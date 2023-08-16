@@ -3,7 +3,7 @@ export const aboutController = {
     const viewData = {
       title: "About Us",
     };
-    console.log("-- about rendered");
+    
     response.render("about-view", viewData);
   },
 };

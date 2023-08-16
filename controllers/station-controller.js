@@ -36,7 +36,6 @@ export const stationController = {
       flash: request.flash,
     };
 
-    console.log("-- station rendered");
     response.render("station-view", viewData);
   },
 

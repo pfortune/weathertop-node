@@ -1,5 +1,7 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
+import { generateReading } from "../utils/openweather.js";
+import { formatDate } from "../utils/date-utils.js";
 import { Analytics } from "../utils/analytics-utils.js";
 
 export const dashboardController = {
@@ -24,7 +26,6 @@ export const dashboardController = {
       flash: request.flash,
     };
 
-    console.log("-- dashboard rendered");
     response.render("dashboard-view", viewData);
   },
 
@@ -58,10 +59,26 @@ export const dashboardController = {
         longitude,
       };
 
-      await stationStore.addStation(newStation);
-      response.cookie("flash_success", "Station added successfully!", { maxAge: 10000 });
-      response.redirect("/dashboard");
-    }
+      const stationId = await stationStore.addStation(newStation);
+      const apiKey = process.env.OPEN_WEATHER_API_KEY;
+
+      try {
+        const newReading = await generateReading({ latitude, longitude, apiKey });
+
+        if (newReading) {
+          newReading.timestamp = formatDate(new Date());
+          await readingStore.addReading(stationId, newReading);
+          response.cookie("flash_success", "Station added and reading auto generated successfully!", { maxAge: 10000 });
+        } else {
+          response.cookie("flash_error", "Failed to retrieve reading from API", { maxAge: 10000 });
+        }
+      } catch (error) {
+        // Handle specific error message or use a generic one
+        const errorMessage = error.message || "An error occurred while retrieving reading from API";
+        response.cookie("flash_error", errorMessage, { maxAge: 10000 });
+      }
+        response.redirect("/dashboard");
+      }
   },
 
   async deleteStation(request, response) {

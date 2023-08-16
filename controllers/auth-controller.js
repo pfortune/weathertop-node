@@ -7,7 +7,6 @@ export const authController = {
       flash: request.flash,
     };
 
-    console.log("-- login rendered");
     response.render("login-view", viewData);
   },
 
@@ -23,7 +22,6 @@ export const authController = {
       flash: request.flash,
     };
 
-    console.log("-- register rendered");
     response.render("register-view", viewData);
   },
 
