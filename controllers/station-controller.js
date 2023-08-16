@@ -79,9 +79,10 @@ export const stationController = {
     }
   
     const { latitude, longitude, _id } = await stationStore.getStationById(request.params.id);
-  
+    const apiKey = process.env.OPEN_WEATHER_API_KEY;
+
     try {
-      const newReading = await generateReading({ latitude, longitude });
+      const newReading = await generateReading({ latitude, longitude, apiKey });
   
       if (newReading) {
         newReading.timestamp = formatDate(new Date());

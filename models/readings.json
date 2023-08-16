@@ -90,6 +90,26 @@
       "timestamp": "2023-08-02 12:10:58",
       "_id": "b4b50cd8-d814-42d2-b287-56435053a94b",
       "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3"
+    },
+    {
+      "code": 804,
+      "temperature": 16,
+      "windSpeed": 12,
+      "windDirection": 127,
+      "pressure": 993,
+      "timestamp": "2023-08-18 20:42:09",
+      "_id": "2914f3f9-da31-4480-b88b-2d47bf7bda78",
+      "stationId": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
+    },
+    {
+      "code": 800,
+      "temperature": 16,
+      "windSpeed": 11,
+      "windDirection": 119,
+      "pressure": 993,
+      "timestamp": "2023-08-18 20:43:47",
+      "_id": "3a2488ae-7863-4d30-ba9c-02e0147cc30d",
+      "stationId": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
     }
   ]
 }
