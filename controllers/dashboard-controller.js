@@ -59,7 +59,7 @@ export const dashboardController = {
         longitude,
       };
 
-      const stationId = await stationStore.addStation(newStation);
+      const station = await stationStore.addStation(newStation);
       const apiKey = process.env.OPEN_WEATHER_API_KEY;
 
       try {
@@ -67,7 +67,7 @@ export const dashboardController = {
 
         if (newReading) {
           newReading.timestamp = formatDate(new Date());
-          await readingStore.addReading(stationId, newReading);
+          await readingStore.addReading(station._id, newReading);
           response.cookie("flash_success", "Station added and reading auto generated successfully!", { maxAge: 10000 });
         } else {
           response.cookie("flash_error", "Failed to retrieve reading from API", { maxAge: 10000 });
