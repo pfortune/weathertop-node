@@ -59,10 +59,9 @@ export const dashboardController = {
       };
 
       const station = await stationStore.addStation(newStation);
-      const apiKey = process.env.OPEN_WEATHER_API_KEY;
 
       try {
-        const newReading = await generateReading({ latitude, longitude, apiKey });
+        const newReading = await generateReading({ latitude, longitude });
 
         if (newReading) {
           await readingStore.addReading(station._id, newReading);

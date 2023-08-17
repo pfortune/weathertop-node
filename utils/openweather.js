@@ -2,8 +2,8 @@ import axios from "axios";
 
 const BASE_URL = "https://api.openweathermap.org/data/3.0/onecall";
 
-export async function generateReading({ latitude, longitude, exclude, apiKey }) {
-  const requestUrl = buildUrl({ latitude, longitude, exclude, apiKey });
+export async function generateReading({ latitude, longitude, exclude }) {
+  const requestUrl = buildUrl({ latitude, longitude, exclude });
 
   try {
     const response = await axios.get(requestUrl);
@@ -26,9 +26,9 @@ export async function generateReading({ latitude, longitude, exclude, apiKey }) 
   return null;
 }
 
-export async function getDailyWeatherTrends({ latitude, longitude, exclude, apiKey }) {
+export async function getDailyWeatherTrends({ latitude, longitude, exclude }) {
   const defaultExclude = "minutely,hourly,alerts"; 
-  const requestUrl = buildUrl({ latitude, longitude, exclude: exclude || defaultExclude, apiKey });
+  const requestUrl = buildUrl({ latitude, longitude, exclude: exclude || defaultExclude });
 
   let report = { labels: [], temperature: [], windSpeed: [], pressure: [] };
   try {
@@ -52,11 +52,11 @@ export async function getDailyWeatherTrends({ latitude, longitude, exclude, apiK
 }
 
 function buildUrl(options = {}) {
+  const apiKey = process.env.OPEN_WEATHER_API_KEY;
   const {
     latitude,
     longitude,
-    exclude = "minutely,hourly,daily,alerts",
-    apiKey
+    exclude = "minutely,hourly,daily,alerts"
   } = options;
 
   return `${BASE_URL}?lat=${latitude}&lon=${longitude}&units=metric&exclude=${exclude}&appid=${apiKey}`;

@@ -61,7 +61,6 @@ export const stationController = {
       temperature: parseInt(temperature),
       windSpeed: parseInt(windSpeed),
       pressure: parseInt(pressure),
-      timestamp,
       windDirection: parseInt(windDirection),
     };
 
@@ -77,10 +76,9 @@ export const stationController = {
     }
   
     const { latitude, longitude, _id } = await stationStore.getStationById(request.params.id);
-    const apiKey = process.env.OPEN_WEATHER_API_KEY;
 
     try {
-      const newReading = await generateReading({ latitude, longitude, apiKey });
+      const newReading = await generateReading({ latitude, longitude });
   
       if (newReading) {
         await readingStore.addReading(_id, newReading);
