@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
+import { formatDate } from "../utils/date-utils.js";
 
 const db = initStore("readings");
 
@@ -13,6 +14,7 @@ export const readingStore = {
     await db.read();
     reading._id = v4();
     reading.stationId = stationId;
+    reading.timestamp = formatDate(new Date());
     db.data.readings.push(reading);
     await db.write();
     return reading;
@@ -45,6 +47,12 @@ export const readingStore = {
 
   async deleteAllReadings() {
     db.data.readings = [];
+    await db.write();
+  },
+
+  async deleteReadingsByStationId(stationId) {
+    await db.read();
+    db.data.readings = db.data.readings.filter((reading) => reading.stationId !== stationId);
     await db.write();
   },
 

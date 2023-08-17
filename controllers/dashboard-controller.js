@@ -1,7 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 import { generateReading } from "../utils/openweather.js";
-import { formatDate } from "../utils/date-utils.js";
 import { Analytics } from "../utils/analytics-utils.js";
 
 export const dashboardController = {
@@ -66,7 +65,6 @@ export const dashboardController = {
         const newReading = await generateReading({ latitude, longitude, apiKey });
 
         if (newReading) {
-          newReading.timestamp = formatDate(new Date());
           await readingStore.addReading(station._id, newReading);
           response.cookie("flash_success", "Station added and reading auto generated successfully!", { maxAge: 10000 });
         } else {

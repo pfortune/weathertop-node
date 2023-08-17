@@ -2,7 +2,6 @@ import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 import { generateReading } from "../utils/openweather.js";
 import { Analytics } from "../utils/analytics-utils.js";
-import { formatDate } from "../utils/date-utils.js";
 
 export const stationController = {
   async index(request, response) {
@@ -84,7 +83,6 @@ export const stationController = {
       const newReading = await generateReading({ latitude, longitude, apiKey });
   
       if (newReading) {
-        newReading.timestamp = formatDate(new Date());
         await readingStore.addReading(_id, newReading);
         response.cookie("flash_success", "Reading auto generated successfully!", { maxAge: 10000 }); // Expires after 10 seconds
       } else {
