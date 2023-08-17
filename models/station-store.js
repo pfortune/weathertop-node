@@ -39,16 +39,6 @@ export const stationStore = {
     if (index === -1) {
       throw new Error(`Station with ID ${id} not found.`);
     }
-    db.data.stations.splice(index, 1);
-    await db.write();
-  },
-
-  async deleteStationById(id) {
-    await db.read();
-    const index = db.data.stations.findIndex((station) => station._id === id);
-    if (index === -1) {
-      throw new Error(`Station with ID ${id} not found.`);
-    }
     await readingStore.deleteReadingsByStationId(id); // Delete associated readings
     db.data.stations.splice(index, 1);
     await db.write();
