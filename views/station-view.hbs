@@ -1,10 +1,6 @@
 {{> menu active="dashboard"}}
 
-<iframe width="100%" height="350" style="border: #ffffff" src="https://www.openstreetmap.org/export/embed.html?
-bbox={{subtract longitude 0.005}}%2C{{subtract latitude 0.005}}%2C{{add longitude 0.005}}%2C{{add latitude 0.005}}
-&amp;layer=mapnik&amp;
-marker={{latitude}}%2C{{longitude}}">
-</iframe>
+{{> station-map}}
 
 {{> flash-messages}}
 

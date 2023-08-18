@@ -1,0 +1,20 @@
+<div class="ui segment" id="map" style="height: 350px;"></div>
+
+<script>
+  let map = L.map('map')
+  let openStreetMapLayer = L.tileLayer(
+    'https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+    { maxZoom: 19, attribution: '© OpenStreetMap' }
+  );
+  openStreetMapLayer.addTo(map);
+
+  let latitude = {{latitude}}; // Replace with the actual latitude
+  let longitude = {{longitude}}; // Replace with the actual longitude
+  let name = `{{title}}`; // Replace with the actual name
+
+  let marker = L.marker([latitude, longitude], {title: name});
+  marker.bindPopup(name);
+  marker.addTo(map);
+
+  map.setView([latitude, longitude], 11);
+</script>

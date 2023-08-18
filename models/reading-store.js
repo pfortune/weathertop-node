@@ -62,6 +62,7 @@ export const readingStore = {
     if (reading) {
       reading.code = updatedReading.code;
       reading.temperature = updatedReading.temperature;
+      reading.windDirection = updatedReading.windDirection;
       reading.windSpeed = updatedReading.windSpeed;
       reading.pressure = updatedReading.pressure;
       await db.write();
