@@ -1,11 +1,11 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
-import { generateReading } from "../utils/openweather.js";
+import { generateReading, getDailyWeatherTrends } from "../utils/openweather.js";
 import { Analytics } from "../utils/analytics-utils.js";
 
 export const stationController = {
   async index(request, response) {
-    let station;
+    let station, weatherTrends;
 
     try {
       station = await stationStore.getStationById(request.params.id);
@@ -21,6 +21,14 @@ export const stationController = {
       return;
     }
 
+    try {
+      weatherTrends = await getDailyWeatherTrends({latitude: station.latitude, longitude: station.longitude});
+    } catch (error) {
+      // Handle specific error message or use a generic one
+      const errorMessage = error.message || "An error occurred while retrieving daily weather trends from API";
+      response.cookie("flash_error", errorMessage, { maxAge: 10000 }); // Expires after 10 seconds
+    }
+
     // Check if the station belongs to the logged-in user
     if (station.userid !== request.user._id) {
       response.cookie("flash_error", "You don't have access to this station!", { maxAge: 10000 });
@@ -32,8 +40,11 @@ export const stationController = {
 
     const viewData = {
       ...station,
+      weatherTrends,
       flash: request.flash,
     };
+
+    console.log(viewData);
 
     response.render("station-view", viewData);
   },
