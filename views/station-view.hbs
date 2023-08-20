@@ -16,4 +16,9 @@
     {{/if}}
 </div>
 
+{{> chart id="temp" name="Temperature" values=weatherTrends.temperature labels=weatherTrends.labels}}
+{{> chart id="wind" name="Wind Speed" values=weatherTrends.windSpeed labels=weatherTrends.labels}}
+{{> chart id="pressure" name="Pressure" values=weatherTrends.pressure labels=weatherTrends.labels}}
+
 {{> confirm-modal }}
+

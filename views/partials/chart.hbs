@@ -1,0 +1,31 @@
+ <div class="box" id="{{id}}"></div>
+
+<script>
+  {
+  let data = {
+    labels: [
+      {{#each labels}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+          name: "{{name}}", type: "line",
+          values: [
+            {{#each values}}
+              {{this}},
+            {{/each}}
+          ]
+      }
+    ],
+    yMarkers: [{ label: "", value: "{{yMarker}}" }]
+  }
+
+  const chart_{{id}} = new frappe.Chart("#{{id}}", {
+    title: `{{name}} Trend`,
+    data,
+    type: 'line',
+    height: 250,
+  })
+  }
+</script>
