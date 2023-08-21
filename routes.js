@@ -11,31 +11,30 @@ import { authController } from "./controllers/auth-controller.js";
 export const router = express.Router();
 
 router.use(flash);
-router.use(attachUser);
 
 // Home page
 router.get("/", homeController.index);
 
 // Dashboard page
-router.get("/dashboard", dashboardController.index);
-router.post("/dashboard/add", dashboardController.addStation);
-router.post("/dashboard/:id/delete", dashboardController.deleteStation);
+router.get("/dashboard", attachUser(), dashboardController.index);
+router.post("/dashboard/add", attachUser(), dashboardController.addStation);
+router.post("/dashboard/:id/delete", attachUser(), dashboardController.deleteStation);
 // router.get("/dashboard/page/:page", dashboardController.index);
 
 // Station page
-router.get("/station/:id", stationController.index);
-router.post("/station/:id/add", stationController.addReading);
-router.post("/station/:id/delete/:readingid", stationController.deleteReading);
-router.post("/station/:id/auto", stationController.addReadingFromAPI);
+router.get("/station/:id", attachUser(), stationController.index);
+router.post("/station/:id/add", attachUser(), stationController.addReading);
+router.post("/station/:id/delete/:readingid", attachUser(), stationController.deleteReading);
+router.post("/station/:id/auto", attachUser(), stationController.addReadingFromAPI);
 
 // Authentication
 router.get("/login", authController.login);
 router.get("/register", authController.register);
 router.post("/register", authController.registerUser);
 router.post("/authenticate", authController.authenticate);
-router.get("/logout", authController.logout);
-router.get("/account", authController.showAccount);
-router.post("/account", authController.updateAccount);
+router.get("/logout", attachUser(), authController.logout);
+router.get("/account", attachUser(), authController.showAccount);
+router.post("/account", attachUser(), authController.updateAccount);
 
 // About page
 router.get("/about", aboutController.index);

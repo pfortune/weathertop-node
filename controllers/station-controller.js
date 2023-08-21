@@ -4,7 +4,7 @@ import { generateReading, getDailyWeatherTrends } from "../utils/openweather.js"
 import { Analytics } from "../utils/analytics-utils.js";
 
 export const stationController = {
-  async index(request, response) {
+  async index(request, response) { 
     let station, weatherTrends;
 
     try {
@@ -13,11 +13,6 @@ export const stationController = {
       console.error(error.message); // You can log the error for debugging
       response.cookie("flash_error", "Station not found!", { maxAge: 10000 });
       response.redirect("/dashboard");
-      return;
-    }
-
-    if (!request.user) {
-      response.redirect("/login");
       return;
     }
 
@@ -50,11 +45,6 @@ export const stationController = {
   },
 
   async addReading(request, response) {
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-
     const station = await stationStore.getStationById(request.params.id);
 
     const { code, temperature, windSpeed, pressure, windDirection } = request.body;
@@ -81,11 +71,6 @@ export const stationController = {
   },
 
   async addReadingFromAPI(request, response) {
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-  
     const { latitude, longitude, _id } = await stationStore.getStationById(request.params.id);
 
     try {
@@ -107,11 +92,6 @@ export const stationController = {
   },  
 
   async deleteReading(request, response) {
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-
     const { id, readingid } = request.params;
     await readingStore.deleteReading(readingid);
     response.redirect(`/station/${id}`);

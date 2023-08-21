@@ -5,12 +5,6 @@ import { Analytics } from "../utils/analytics-utils.js";
 
 export const dashboardController = {
   async index(request, response) {
-    // Check if the user is logged in
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-
     // Fetch stations only belonging to the logged-in user
     const stations = await stationStore.getStationsByUserId(request.user._id);
 
@@ -29,12 +23,6 @@ export const dashboardController = {
   },
 
   async addStation(request, response) {
-    // Check if the user is logged in
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-
     const { title, latitude, longitude } = request.body;
 
     if (!title || title.trim() === "") {
@@ -79,12 +67,6 @@ export const dashboardController = {
   },
 
   async deleteStation(request, response) {
-    // Check if the user is logged in
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-
     const id = request.params.id;
     await stationStore.deleteStationById(id);
     response.redirect("/dashboard");

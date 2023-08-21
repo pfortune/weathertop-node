@@ -29,11 +29,6 @@ export const authController = {
     const { firstname, lastname, email, password } = request.body;
     let user;
 
-    if (request.user) {
-      response.redirect("/dashboard");
-      return;
-    }
-
     // Validation
     if (!firstname || !lastname || !email) {
       response.cookie("flash_error", "All fields must be filled!", { maxAge: 10000 });
@@ -41,7 +36,7 @@ export const authController = {
       return;
     }
 
-    const existingUser = await userStore.getUserByEmail(email);
+    const existingUser = await userStore.getUserByEmail(email.toLowerCase());
     if (existingUser) {
       response.cookie('flash_error', 'This email is already in use. Please use a different email.', { maxAge: 10000 });
       response.redirect("/register");
@@ -81,10 +76,6 @@ export const authController = {
   },
 
   async showAccount(request, response) {
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
 
     const user = await userStore.getUserById(request.user._id);
 
@@ -110,7 +101,7 @@ export const authController = {
       return;
     }
 
-    const existingUser = await userStore.getUserByEmail(email);
+    const existingUser = await userStore.getUserByEmail(email.toLowerCase());
     if (existingUser && existingUser._id != user._id) {
       response.cookie('flash_error', 'This email is already in use. Please use a different email.', { maxAge: 10000 });
       response.redirect("/account");
@@ -118,14 +109,14 @@ export const authController = {
     }
 
     if(!password) {
-      await userStore.updateUser(user._id, { firstname, lastname, email });
+      await userStore.updateUser(user._id, { firstname, lastname, email: email.toLowerCase() });
     } else {
       if (!authController.isValidPassword(password)) {
         response.cookie('flash_error', 'Password must be at least 8 characters long and include at least one number.', { maxAge: 10000 });
         response.redirect("/account");
         return;
       }
-      await userStore.updateUser(user._id, { firstname, lastname, email, password });
+      await userStore.updateUser(user._id, { firstname, lastname, email: email.toLowerCase(), password });
     }
     
     response.cookie('flash_success', `Account updated`, { maxAge: 10000 });
