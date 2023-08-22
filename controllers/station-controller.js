@@ -45,10 +45,18 @@ export const stationController = {
   },
 
   async addReading(request, response) {
-    const station = await stationStore.getStationById(request.params.id);
+    let station;
+    try {
+      station = await stationStore.getStationById(request.params.id);
+    } catch (error) {
+      console.error(error.message); // You can log the error for debugging
+      response.cookie("flash_error", "Station not found!", { maxAge: 10000 });
+      response.redirect("/dashboard");
+      return;
+    }
+    
 
     const { code, temperature, windSpeed, pressure, windDirection } = request.body;
-    const timestamp = formatDate(new Date());
 
     // Validation
     if (!code || !temperature || !windSpeed || !pressure || !windDirection) {
@@ -64,9 +72,14 @@ export const stationController = {
       pressure: parseInt(pressure),
       windDirection: parseInt(windDirection),
     };
-
-    await readingStore.addReading(station._id, newReading);
-    response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
+    
+    try {
+      await readingStore.addReading(station._id, newReading);
+      response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
+    } catch(error) {
+      response.cookie("flash_error", "Failed to add reading!", { maxAge: 10000 }); // Expires after 10 seconds
+    }
+        
     response.redirect(`/station/${station._id}`);
   },
 
