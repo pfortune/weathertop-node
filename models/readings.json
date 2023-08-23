@@ -70,16 +70,6 @@
       "timestamp": "2023-08-02 12:10:58",
       "_id": "b4b50cd8-d814-42d2-b287-56435053a94b",
       "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3"
-    },
-    {
-      "code": 800,
-      "temperature": 18,
-      "windSpeed": 9,
-      "windDirection": 230,
-      "pressure": 1018,
-      "_id": "376e82c8-ce3c-42f8-805b-0e29fd2fb0d6",
-      "stationId": "348f873a-d1ed-434d-8eaf-f42086bc235e",
-      "timestamp": "2023-08-20 16:12:53"
     }
   ]
 }

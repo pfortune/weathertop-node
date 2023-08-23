@@ -11,7 +11,7 @@ export async function generateReading({ latitude, longitude, exclude }) {
     if (response.status === 200) {
       const currentWeather = response.data.current;
       const newReading = {
-        code: Math.round(currentWeather.weather[0].id / 100) * 100,
+        code: matchWeatherCode(currentWeather.weather[0].id),
         temperature: parseInt(currentWeather.temp),
         windSpeed: parseInt(currentWeather.wind_speed),
         windDirection: parseInt(currentWeather.wind_deg),
@@ -68,4 +68,17 @@ function handleApiError(error) {
   } else {
     throw error;
   }
+}
+
+function matchWeatherCode(code) {
+  if (code === 800) return 100; // Clear
+  if (code >= 801 && code <= 804) return 200; // Partial clouds
+  if (code >= 701 && code <= 781) return 300; // Cloudy (fog, mist, etc.)
+  if (code >= 300 && code <= 321) return 400; // Light Showers (drizzle)
+  if (code >= 500 && code <= 531) return 500; // Heavy Showers (rain)
+  if (code >= 400 && code <= 504) return 600; // Rain
+  if (code >= 600 && code <= 622) return 700; // Snow
+  if (code >= 200 && code <= 232) return 800; // Thunder
+
+  return "Unknown weather condition";
 }
