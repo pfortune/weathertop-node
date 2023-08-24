@@ -4,29 +4,29 @@ import { generateReading, getDailyWeatherTrends } from "../utils/openweather.js"
 import { Analytics } from "../utils/analytics-utils.js";
 
 export const stationController = {
-  async index(request, response) { 
+  async index(request, response) {
     let station, weatherTrends;
 
     try {
       station = await stationStore.getStationById(request.params.id);
     } catch (error) {
       console.error(error.message); // You can log the error for debugging
-      response.cookie("flash_error", "Station not found!", { maxAge: 10000 });
+      request.flash("error", "Station not found!");
       response.redirect("/dashboard");
       return;
     }
 
     try {
-      weatherTrends = await getDailyWeatherTrends({latitude: station.latitude, longitude: station.longitude});
+      weatherTrends = await getDailyWeatherTrends({ latitude: station.latitude, longitude: station.longitude });
     } catch (error) {
       // Handle specific error message or use a generic one
       const errorMessage = error.message || "An error occurred while retrieving daily weather trends from API";
-      response.cookie("flash_error", errorMessage, { maxAge: 10000 }); // Expires after 10 seconds
+      request.flash("error", errorMessage); // Expires after 10 seconds
     }
 
     // Check if the station belongs to the logged-in user
     if (station.userid !== request.user._id) {
-      response.cookie("flash_error", "You don't have access to this station!", { maxAge: 10000 });
+      request.flash("error", "You don't have access to this station!");
       response.redirect("/dashboard");
       return;
     }
@@ -50,17 +50,16 @@ export const stationController = {
       station = await stationStore.getStationById(request.params.id);
     } catch (error) {
       console.error(error.message); // You can log the error for debugging
-      response.cookie("flash_error", "Station not found!", { maxAge: 10000 });
+      request.flash("error", "Station not found!");
       response.redirect("/dashboard");
       return;
     }
-    
 
     const { code, temperature, windSpeed, pressure, windDirection } = request.body;
 
     // Validation
     if (!code || !temperature || !windSpeed || !pressure || !windDirection) {
-      response.cookie("flash_error", "All fields must be filled!", { maxAge: 10000 }); // Expires after 10 seconds
+      request.flash("error", "All fields must be filled!"); // Expires after 10 seconds
       response.redirect(`/station/${station._id}`);
       return;
     }
@@ -72,14 +71,14 @@ export const stationController = {
       pressure: parseInt(pressure),
       windDirection: parseInt(windDirection),
     };
-    
+
     try {
       await readingStore.addReading(station._id, newReading);
-      response.cookie("flash_success", "Reading added successfully!", { maxAge: 10000 }); // Expires after 10 seconds
-    } catch(error) {
-      response.cookie("flash_error", "Failed to add reading!", { maxAge: 10000 }); // Expires after 10 seconds
+      request.flash("success", "Reading added successfully!"); // Expires after 10 seconds
+    } catch (error) {
+      request.flash("error", "Failed to add reading!"); // Expires after 10 seconds
     }
-        
+
     response.redirect(`/station/${station._id}`);
   },
 
@@ -88,21 +87,21 @@ export const stationController = {
 
     try {
       const newReading = await generateReading({ latitude, longitude });
-  
+
       if (newReading) {
         await readingStore.addReading(_id, newReading);
-        response.cookie("flash_success", "Reading auto generated successfully!", { maxAge: 10000 }); // Expires after 10 seconds
+        request.flash("success", "Reading auto generated successfully!"); // Expires after 10 seconds
       } else {
-        response.cookie("flash_error", "Failed to retrieve reading from API", { maxAge: 10000 }); // Expires after 10 seconds
+        request.flash("error", "Failed to retrieve reading from API"); // Expires after 10 seconds
       }
     } catch (error) {
       // Handle specific error message or use a generic one
       const errorMessage = error.message || "An error occurred while retrieving reading from API";
-      response.cookie("flash_error", errorMessage, { maxAge: 10000 }); // Expires after 10 seconds
+      request.flash("error", errorMessage); // Expires after 10 seconds
     }
-  
+
     response.redirect(`/station/${_id}`);
-  },  
+  },
 
   async deleteReading(request, response) {
     const { id, readingid } = request.params;

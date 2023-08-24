@@ -15,8 +15,7 @@ export const dashboardController = {
 
     const viewData = {
       title: "Dashboard",
-      stations,
-      flash: request.flash,
+      stations
     };
 
     response.render("dashboard-view", viewData);
@@ -26,15 +25,15 @@ export const dashboardController = {
     const { title, latitude, longitude } = request.body;
 
     if (!title || title.trim() === "") {
-      response.cookie("flash_error", "Station title cannot be empty!", { maxAge: 10000 });
+      request.flash("error", "Station title cannot be empty!");
       response.redirect("/dashboard");
       return;
     } else if (latitude < -90 || latitude > 90) {
-      response.cookie("flash_error", "Latitude must be between -90 and 90!", { maxAge: 10000 });
+      request.flash("error", "Latitude must be between -90 and 90!");
       response.redirect("/dashboard");
       return;
     } else if (longitude < -180 || longitude > 180) {
-      response.cookie("flash_error", "Longitude must be between -180 and 180!", { maxAge: 10000 });
+      request.flash("error", "Longitude must be between -180 and 180!");
       response.redirect("/dashboard");
       return;
     } else {
@@ -53,17 +52,17 @@ export const dashboardController = {
 
         if (newReading) {
           await readingStore.addReading(station._id, newReading);
-          response.cookie("flash_success", "Station added and reading auto generated successfully!", { maxAge: 10000 });
+          request.flash("success", "Station added and reading auto generated successfully!");
         } else {
-          response.cookie("flash_error", "Failed to retrieve reading from API", { maxAge: 10000 });
+          request.flash("error", "Failed to retrieve reading from API");
         }
       } catch (error) {
         // Handle specific error message or use a generic one
         const errorMessage = error.message || "An error occurred while retrieving reading from API";
-        response.cookie("flash_error", errorMessage, { maxAge: 10000 });
+        request.flash("error", errorMessage);
       }
-        response.redirect("/dashboard");
-      }
+      response.redirect("/dashboard");
+    }
   },
 
   async deleteStation(request, response) {

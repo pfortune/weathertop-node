@@ -2,22 +2,28 @@
  * Middleware function to manage flash messages in the application.
  * Flash messages are short-lived messages intended to communicate the status of an operation,
  * such as success or failure. They are often used to provide user feedback after form submissions.
- *
- * This middleware retrieves flash messages from cookies and attaches them to the request object.
- * It then clears the flash cookies, ensuring that the messages are displayed only once.
  */
 export const flash = (request, response, next) => {
-  // Retrieve flash messages for error and success from cookies
-  // and attach them to the request object
-  request.flash = {
-    error: request.cookies.flash_error,
-    success: request.cookies.flash_success,
+  
+  // Let's us easily set a flash message in the controller
+  request.flash = (type, message) => {
+    response.cookie(`flash_${type}`, message); // Store the message as a cookie.
   };
 
-  // Clear the flash cookies so that the messages are not displayed again
-  // on subsequent requests
-  response.clearCookie("flash_error");
-  response.clearCookie("flash_success");
+  const messageTypes = ["error", "success"];
+  const flashMessages = {};
 
-  next(); // Continue to the next middleware or route handler
+  // Loop over each message type, like "error" or "success".
+  messageTypes.forEach(type => {
+    // Grab the message from the cookies.
+    flashMessages[type] = request.cookies[`flash_${type}`];
+    // And then delete the cookie so the message won't show on the next page.
+    response.clearCookie(`flash_${type}`);
+  });
+
+  // Make flash messages accessible to views.
+  response.locals.flash = flashMessages;
+  
+  // Go to the next function in the route.
+  next();
 };
