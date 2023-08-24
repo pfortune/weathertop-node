@@ -3,7 +3,7 @@
  * Flash messages are short-lived messages intended to communicate the status of an operation,
  * such as success or failure. They are often used to provide user feedback after form submissions.
  */
-export const flash = (request, response, next) => {
+export const flashMessages = (request, response, next) => {
   
   // Let's us easily set a flash message in the controller
   request.flash = (type, message) => {

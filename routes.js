@@ -1,5 +1,5 @@
 import express from "express";
-import { flash } from "./middlewares/flash.js";
+import { flashMessages } from "./middlewares/flash-messages.js";
 import { attachUser } from "./middlewares/attach-user.js";
 import { handle404Error } from "./middlewares/handle-404.js";
 import { authGuard } from "./middlewares/auth-guard.js";
@@ -11,7 +11,7 @@ import { authController } from "./controllers/auth-controller.js";
 
 export const router = express.Router();
 
-router.use(flash);
+router.use(flashMessages);
 router.use(attachUser);
 
 // Home page

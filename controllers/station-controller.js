@@ -35,8 +35,7 @@ export const stationController = {
 
     const viewData = {
       ...station,
-      weatherTrends,
-      flash: request.flash,
+      weatherTrends
     };
 
     console.log(viewData);
