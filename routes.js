@@ -1,8 +1,8 @@
 import express from "express";
-import { flash } from "./middleware/flash.js";
-import { attachUser } from "./middleware/attach-user.js";
-import { handle404Error } from "./middleware/handle-404.js";
-import { authGuard } from "./middleware/auth-guard.js";
+import { flash } from "./middlewares/flash.js";
+import { attachUser } from "./middlewares/attach-user.js";
+import { handle404Error } from "./middlewares/handle-404.js";
+import { authGuard } from "./middlewares/auth-guard.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { homeController } from "./controllers/home-controller.js";

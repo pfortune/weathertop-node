@@ -27,7 +27,7 @@ export const authController = {
 
   async registerUser(request, response) {
     const { firstname, lastname, email, password } = request.body;
-    let user;
+    
 
     // Validation
     if (!firstname || !lastname || !email) {
@@ -53,7 +53,15 @@ export const authController = {
         response.redirect("/register");
         return;
       }
+    }
+
+    let user;
+    try {
       user = await userStore.addUser({ firstname, lastname, email, password });
+    } catch (error) {
+      response.cookie('flash_error', 'An error occurred while registering. Please try again.', { maxAge: 10000 });
+      response.redirect("/register");
+      return;
     }
 
     response.cookie('user_id', user._id);

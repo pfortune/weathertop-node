@@ -1,3 +1,5 @@
+import { userStore } from "../models/user-store.js";
+
 /**
  * Middleware function to attach the user object to the request if the user is logged in.
  * If a user ID is found in the "user_id" cookie, the corresponding user is retrieved
