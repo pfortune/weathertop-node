@@ -9,19 +9,14 @@ import {
 import { trend } from "./trends-utils.js";
 
 export const Analytics = {
-    /**
-   * Update weather station data with the latest reading, including
-   * calculating various statistics and trends.
-   * @param {Object} station - The weather station object containing readings
-   */
   updateWeather(station) {
-    const { readings } = station;
+    const readings = [...station.readings]; // Ensure we're working with a copy
     if (readings.length > 0) {
       const lastReading = readings[readings.length - 1];
       const { code, temperature, windSpeed, pressure, windDirection, timestamp } = lastReading;
 
-      // Assign new values and calculations to the station object
-      Object.assign(station, {
+      // Create a new analytics object
+      const analytics = {
         code,
         windDirection,
         pressure,
@@ -40,9 +35,12 @@ export const Analytics = {
         windChill: calculateWindChill(temperature, windSpeed),
         windDirectionCompass: windDirectionToCompass(windDirection),
         pressureTrend: trend(readings, "pressure"),
-        tempTrend: trend(readings, "temp"),
+        tempTrend: trend(readings, "temperature"),
         windSpeedTrend: trend(readings, "windSpeed"),
-      });
+      };
+
+      return analytics;
     }
+    return null;
   },
 };

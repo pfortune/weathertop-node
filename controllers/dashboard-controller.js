@@ -1,5 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
+import { reportStore } from "../models/report-store.js";
 import { generateReading } from "../utils/openweather.js";
 import { Analytics } from "../utils/analytics-utils.js";
 
@@ -10,7 +11,11 @@ export const dashboardController = {
 
     for (const station of stations) {
       station.readings = await readingStore.getReadingsByStationId(station._id);
-      Analytics.updateWeather(station);
+      const latestReport = await reportStore.getWeatherReportByStationId(station._id);
+
+      if (latestReport) {
+        Object.assign(station, latestReport); // Spread the properties of latestReport into the station object
+      }
     }
 
     const viewData = {
@@ -41,8 +46,8 @@ export const dashboardController = {
       const newStation = {
         title,
         userid: request.user._id, // Associate the station with the user
-        latitude,
-        longitude,
+        latitude: parseInt(latitude),
+        longitude: parseInt(longitude),
       };
 
       const station = await stationStore.addStation(newStation);
@@ -52,6 +57,14 @@ export const dashboardController = {
 
         if (newReading) {
           await readingStore.addReading(station._id, newReading);
+
+          // Update the station object with the new reading
+          station.readings = [newReading]; 
+
+          // Update the report after adding the new reading
+          const report = Analytics.updateWeather(station);
+          await reportStore.addWeatherReport(station._id, report);
+
           request.flash("success", "Station added and reading auto generated successfully!");
         } else {
           request.flash("error", "Failed to retrieve reading from API");
@@ -68,6 +81,7 @@ export const dashboardController = {
   async deleteStation(request, response) {
     const id = request.params.id;
     await stationStore.deleteStationById(id);
+    request.flash("success", "Station deleted successfully!");
     response.redirect("/dashboard");
   },
 };

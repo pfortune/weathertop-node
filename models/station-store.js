@@ -1,6 +1,7 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
 import { readingStore } from "./reading-store.js";
+import { reportStore } from "./report-store.js";
 
 const db = initStore("stations");
 
@@ -40,6 +41,7 @@ export const stationStore = {
       throw new Error(`Station with ID ${id} not found.`);
     }
     await readingStore.deleteReadingsByStationId(id); // Delete associated readings
+    await reportStore.deleteWeatherReport(id); // Delete the associated report
     db.data.stations.splice(index, 1);
     await db.write();
   },
