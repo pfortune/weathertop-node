@@ -59,3 +59,19 @@ button.icon {
 #confirmDeleteDialog form {
   display: inline-block;
 }
+
+.graph-svg-tip.comparison span.title {
+  font-size: 16px;
+  color: #ffffff;
+  margin: 8px 5px;
+  padding: 0px;
+  text-align: center;
+}
+.graph-svg-tip.comparison span.title strong {
+  display: none;
+}
+.graph-svg-tip.comparison ul.data-point-list, 
+.graph-svg-tip.comparison ul.data-point-list li {
+  margin-top:0px;
+  padding-top: 0px;
+}
