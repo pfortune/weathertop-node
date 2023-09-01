@@ -12,13 +12,15 @@
         {{> card-readings}}
         {{> list-readings}}
     {{else}}
-        <p>You have no readings yet. Add one!</p>
+        <p>You have no readings yet. Add one manually or auto generate the latest report!</p>
     {{/if}}
 </div>
 
-{{> chart id="temp" name="Temperature" values=weatherTrends.temperature labels=weatherTrends.labels}}
-{{> chart id="wind" name="Wind Speed" values=weatherTrends.windSpeed labels=weatherTrends.labels}}
-{{> chart id="pressure" name="Pressure" values=weatherTrends.pressure labels=weatherTrends.labels}}
+{{#if weatherTrends}}
+    {{> chart id="temp" name="Temperature" values=weatherTrends.temperature labels=weatherTrends.labels}}
+    {{> chart id="wind" name="Wind Speed" values=weatherTrends.windSpeed labels=weatherTrends.labels}}
+    {{> chart id="pressure" name="Pressure" values=weatherTrends.pressure labels=weatherTrends.labels}}
+{{/if}}
 
 {{> confirm-modal }}
 

@@ -23,11 +23,39 @@
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
-      "title": "Lighthouse of Alexandria",
-      "userid": "b10d9b31-3f7e-4695-83ac-79549931ca53",
-      "latitude": 31.213339,
-      "longitude": 29.884668,
-      "_id": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
+      "title": "Eiffel Tower",
+      "_id": "2f2189f8-4626-4982-b7a3-d6c958c49de6",
+      "latitude": 48.8584,
+      "longitude": 2.2945,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
+    },
+    {
+      "title": "Statue of Liberty",
+      "_id": "dea8e45b-9ade-46b9-9c2d-ffab4fd20f02",
+      "latitude": 40.6892,
+      "longitude": -74.0445,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
+    },
+    {
+      "title": "Machu Picchu",
+      "_id": "2171f1ae-1819-4e91-9294-27a402fb8604",
+      "latitude": -13.1631,
+      "longitude": -72.545,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
+    },
+    {
+      "title": "Taj Mahal",
+      "_id": "52768603-26cc-4dfa-a7b2-12387fef3c8e",
+      "latitude": 27.1751,
+      "longitude": 78.0421,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
+    },
+    {
+      "title": "Great Wall of China",
+      "_id": "d28110c3-fdf5-4a66-bc0f-7ca83c5c2f9e",
+      "latitude": 40.4319,
+      "longitude": 116.5704,
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     }
   ]
 }

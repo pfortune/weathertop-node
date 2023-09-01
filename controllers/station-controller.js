@@ -7,10 +7,11 @@ import { Analytics } from "../utils/analytics-utils.js";
 export const stationController = {
   async index(request, response) {
     let station, latestReport, weatherTrends;
+
     try {
       station = await stationStore.getStationById(request.params.id);
     } catch (error) {
-      console.error(error.message); // You can log the error for debugging
+      console.error(error.message);
       request.flash("error", "Station not found!");
       response.redirect("/dashboard");
       return;
@@ -23,15 +24,26 @@ export const stationController = {
       return;
     }
 
+    // Fetch the readings of the station
+    station.readings = await readingStore.getReadingsByStationId(station._id);
+
+    if (!station.readings || station.readings.length === 0) {    
+      const viewData = {
+        ...station
+      };
+
+      response.render("station-view", viewData);
+      return;
+    }
+
     try {
       weatherTrends = await getDailyWeatherTrends({ latitude: station.latitude, longitude: station.longitude });
     } catch (error) {
-      // Handle specific error message or use a generic one
       const errorMessage = error.message || "An error occurred while retrieving daily weather trends from API";
       request.flash("error", errorMessage);
     }
 
-    // Check if a weather report exists for the station
+    // Now, we can safely check for or generate a latestReport
     latestReport = await reportStore.getWeatherReportByStationId(station._id);
 
     if (!latestReport) {
@@ -131,7 +143,12 @@ export const stationController = {
 
     // Update the report for that station
     const updatedReport = Analytics.updateWeather(station);
-    await reportStore.addWeatherReport(stationId, updatedReport);
+
+    if (updatedReport) {
+      await reportStore.addWeatherReport(stationId, updatedReport);
+    } else {
+      await reportStore.deleteWeatherReport(stationId);
+    }
 
     response.redirect(`/station/${stationId}`);
   },
