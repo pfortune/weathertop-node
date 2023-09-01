@@ -116,7 +116,7 @@ export const stationController = {
         await readingStore.addReading(_id, newReading);
 
         // Update the station object with the new reading
-        station.readings.push(newReading);;
+        station.readings.push(newReading);
 
         // Update the report after adding the new reading
         const report = Analytics.updateWeather(station);
@@ -138,13 +138,8 @@ export const stationController = {
   async deleteReading(request, response) {
     const { id: stationId, readingid } = request.params;
 
-    // Remove the reading from the station's readings list
     await readingStore.deleteReading(readingid);
-
-    // Get updated station details
     const station = await stationStore.getStationById(stationId);
-
-    // Update the report for that station
     const updatedReport = Analytics.updateWeather(station);
 
     if (updatedReport) {

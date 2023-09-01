@@ -90,11 +90,6 @@ export const authController = {
   },
 
   async updateAccount(request, response) {
-    if (!request.user) {
-      response.redirect("/login");
-      return;
-    }
-
     const { firstname, lastname, email, password } = request.body;
     const user = await userStore.getUserById(request.user._id);
 
