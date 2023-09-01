@@ -14,23 +14,31 @@ WeatherTop Release 4 is the final and most advanced version of the WeatherTop we
 
 ## Features
 
-- All features from Release 3
-- New Features:
-    1. Chart of Trends for Temperature, Pressure, and Wind Speed
-    2. OpenWeather API Integration
-    3. Map of Stations with Leafletjs on Dashboard
+### From Previous Releases:
+- All functionalities from Release 3 are included.
 
-### Chart of Trends for Temperature, Pressure, and Wind Speed
+### New Features:
 
-Using Frappe Charts, the Station page now displays visually engaging charts showing trends in Temperature, Pressure, and Wind Speed.
+#### 1. **Chart of Trends for Temperature, Pressure, and Wind Speed**
+- Using Frappe Charts, the Station page now provides visually engaging charts that display trends in Temperature, Pressure, and Wind Speed.
 
-### OpenWeather API Integration
+#### 2. **OpenWeather API Integration**
+- Allows users to automatically fetch the latest readings for their weather stations using the OpenWeather API. This ensures more efficient real-time data tracking.
 
-This feature allows users to automatically generate the latest reading for their weather stations using the OpenWeather API, making real-time data tracking more efficient.
+#### 3. **Map of Stations with Leafletjs**
+- Stations are presented on a map on the user's dashboard using Leafletjs, enabling a visual representation that simplifies the understanding of station locations.
 
-### Map of Stations with Leafletjs
+#### 4. **Flash Messages**
+- Flash messages have been integrated to provide users with immediate feedback, such as success or error notifications after operations, enhancing the overall user experience.
 
-All the stations are now displayed on a map on the user's dashboard using Leafletjs. This visual representation enables easy navigation and understanding of station locations.
+#### 5. **Middleware Enhancements**
+- Several middleware functions have been added, including 'Attach User', 'Auth Guard', 'Flash Messages', and 'Handle 404', which bolster the application's robustness and user-friendliness.
+
+#### 6. **Weather Reports Data Store**
+- A dedicated data store and model for weather reports have been created, emphasizing performance improvements by avoiding redundant calculations.
+
+### Potential Enhancements (Future Scope):
+- Looking ahead, there are plans to integrate improved validation mechanisms with Joi, and to bolster security via password encryption with Bcrypt, among other enhancements.
 
 ## Setup and Installation
 
