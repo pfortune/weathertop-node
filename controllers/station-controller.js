@@ -27,9 +27,9 @@ export const stationController = {
     // Fetch the readings of the station
     station.readings = await readingStore.getReadingsByStationId(station._id);
 
-    if (!station.readings || station.readings.length === 0) {    
+    if (!station.readings || station.readings.length === 0) {
       const viewData = {
-        ...station
+        ...station,
       };
 
       response.render("station-view", viewData);
@@ -90,6 +90,9 @@ export const stationController = {
     try {
       await readingStore.addReading(station._id, newReading);
 
+      // Update the station object with the new reading
+      station.readings.push(newReading);
+
       // Update the report after adding the new reading
       const updatedReport = Analytics.updateWeather(station);
       await reportStore.addWeatherReport(station._id, updatedReport);
@@ -113,7 +116,7 @@ export const stationController = {
         await readingStore.addReading(_id, newReading);
 
         // Update the station object with the new reading
-        station.readings = [newReading];
+        station.readings.push(newReading);;
 
         // Update the report after adding the new reading
         const report = Analytics.updateWeather(station);

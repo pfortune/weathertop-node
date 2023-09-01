@@ -10,6 +10,7 @@ export async function generateReading({ latitude, longitude, exclude }) {
 
     if (response.status === 200) {
       const currentWeather = response.data.current;
+
       const newReading = {
         code: matchWeatherCode(currentWeather.weather[0].id),
         temperature: parseInt(currentWeather.temp),

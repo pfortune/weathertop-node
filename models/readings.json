@@ -22,16 +22,6 @@
       "stationId": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
     },
     {
-      "code": 600,
-      "temperature": 24,
-      "windSpeed": 32,
-      "pressure": 990,
-      "windDirection": 90,
-      "timestamp": "2023-07-26 13:17:01",
-      "_id": "8a11a5a5-97a7-4494-ba74-69f89da1162d",
-      "stationId": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
-    },
-    {
       "code": 400,
       "temperature": 32,
       "windSpeed": 55,
@@ -123,16 +113,6 @@
     },
     {
       "code": 200,
-      "temperature": 14,
-      "windSpeed": 0,
-      "windDirection": 169,
-      "pressure": 1021,
-      "_id": "0e157d2f-f0db-47fe-8d58-a336ee59be96",
-      "stationId": "2171f1ae-1819-4e91-9294-27a402fb8604",
-      "timestamp": "2023-09-01 11:07:53"
-    },
-    {
-      "code": 200,
       "temperature": 38,
       "windSpeed": 4,
       "windDirection": 328,
@@ -154,16 +134,6 @@
     {
       "code": 200,
       "temperature": 17,
-      "windSpeed": 2,
-      "windDirection": 147,
-      "pressure": 1009,
-      "_id": "96dd1eea-0f83-408e-9cdb-3021b968e2b5",
-      "stationId": "02d31fad-e314-4f4e-8ad6-397a33f14c1a",
-      "timestamp": "2023-08-01 11:08:51"
-    },
-    {
-      "code": 200,
-      "temperature": 17,
       "windSpeed": 1,
       "windDirection": 0,
       "pressure": 1009,
@@ -180,6 +150,166 @@
       "_id": "7119298c-1a1e-4dbe-bd1b-ba309dd9c308",
       "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3",
       "timestamp": "2023-08-01 11:09:34"
+    },
+    {
+      "code": 200,
+      "temperature": 16,
+      "windSpeed": 1,
+      "windDirection": 350,
+      "pressure": 1009,
+      "_id": "baaf4a11-cca7-4856-bef3-7e010343dcca",
+      "stationId": "dea8e45b-9ade-46b9-9c2d-ffab4fd20f02",
+      "timestamp": "2023-08-05 11:39:35"
+    },
+    {
+      "code": 200,
+      "temperature": 17,
+      "windSpeed": 2,
+      "windDirection": 149,
+      "pressure": 1009,
+      "_id": "073e01ed-b8c6-4f29-905d-4b7010fe1a12",
+      "stationId": "02d31fad-e314-4f4e-8ad6-397a33f14c1a",
+      "timestamp": "2023-08-05 11:41:17"
+    },
+    {
+      "code": 200,
+      "temperature": 18,
+      "windSpeed": 1,
+      "windDirection": 0,
+      "pressure": 1010,
+      "_id": "6f4b42d6-22a0-4013-907c-65d594a6b0a0",
+      "stationId": "348f873a-d1ed-434d-8eaf-f42086bc235e",
+      "timestamp": "2023-08-05 11:41:22"
+    },
+    {
+      "code": 200,
+      "temperature": 19,
+      "windSpeed": 1,
+      "windDirection": 67,
+      "pressure": 1009,
+      "_id": "f7afe5a5-ff98-4ea2-9f04-3f689357ff8f",
+      "stationId": "2171f1ae-1819-4e91-9294-27a402fb8604",
+      "timestamp": "2023-08-05 11:41:39"
+    },
+    {
+      "code": 200,
+      "temperature": 17,
+      "windSpeed": 1,
+      "windDirection": 41,
+      "pressure": 1010,
+      "_id": "91b24f09-6923-4555-8054-83a1fbf889ac",
+      "stationId": "d28110c3-fdf5-4a66-bc0f-7ca83c5c2f9e",
+      "timestamp": "2023-08-05 11:41:42"
+    },
+    {
+      "code": 200,
+      "temperature": 16,
+      "windSpeed": 1,
+      "windDirection": 330,
+      "pressure": 1009,
+      "_id": "67f58900-f359-4384-9355-c04728f5a050",
+      "stationId": "dea8e45b-9ade-46b9-9c2d-ffab4fd20f02",
+      "timestamp": "2023-09-01 11:43:48"
+    },
+    {
+      "code": 200,
+      "temperature": 18,
+      "windSpeed": 2,
+      "windDirection": 200,
+      "pressure": 1009,
+      "_id": "d6766ce6-b996-495f-918f-553f2c5913e9",
+      "stationId": "2171f1ae-1819-4e91-9294-27a402fb8604",
+      "timestamp": "2023-09-01 11:44:08"
+    },
+    {
+      "code": 200,
+      "temperature": 17,
+      "windSpeed": 1,
+      "windDirection": 75,
+      "pressure": 1010,
+      "_id": "4e7e8de3-58e7-4543-94a7-2012d41f0f7f",
+      "stationId": "2f2189f8-4626-4982-b7a3-d6c958c49de6",
+      "timestamp": "2023-09-01 11:44:29"
+    },
+    {
+      "code": 200,
+      "temperature": 17,
+      "windSpeed": 1,
+      "windDirection": 75,
+      "pressure": 1010,
+      "_id": "aa0a1100-1eb8-4924-9455-52b33242e543",
+      "stationId": "2f2189f8-4626-4982-b7a3-d6c958c49de6",
+      "timestamp": "2023-09-01 12:00:28"
+    },
+    {
+      "code": 200,
+      "temperature": 17,
+      "windSpeed": 1,
+      "windDirection": 75,
+      "pressure": 1010,
+      "_id": "ef2cf9c0-6f4a-43a9-aef8-ad2831a326e7",
+      "stationId": "2f2189f8-4626-4982-b7a3-d6c958c49de6",
+      "timestamp": "2023-09-01 12:06:22"
+    },
+    {
+      "code": 200,
+      "temperature": 19,
+      "windSpeed": 2,
+      "windDirection": 249,
+      "pressure": 1010,
+      "_id": "348f0c97-b951-4b48-9902-71b5d5b67013",
+      "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3",
+      "timestamp": "2023-09-01 12:06:37"
+    },
+    {
+      "code": 200,
+      "temperature": 19,
+      "windSpeed": 2,
+      "windDirection": 249,
+      "pressure": 1010,
+      "_id": "989aefee-9865-4f74-9c21-0ba01e0b969b",
+      "stationId": "5efa143e-587a-4225-8aa0-06c5d81f81b3",
+      "timestamp": "2023-09-01 12:06:39"
+    },
+    {
+      "code": 500,
+      "temperature": 12,
+      "windSpeed": 22,
+      "pressure": 1001,
+      "windDirection": 14,
+      "_id": "c15ccc84-d636-4585-b407-6fbec406b46a",
+      "stationId": "d28110c3-fdf5-4a66-bc0f-7ca83c5c2f9e",
+      "timestamp": "2023-09-01 12:08:51"
+    },
+    {
+      "code": 700,
+      "temperature": -4,
+      "windSpeed": 4,
+      "pressure": 900,
+      "windDirection": 110,
+      "_id": "1d63cd6e-f02f-4ac7-808a-82a3e5e17f68",
+      "stationId": "dea8e45b-9ade-46b9-9c2d-ffab4fd20f02",
+      "timestamp": "2023-09-01 12:11:08"
+    },
+    {
+      "code": 100,
+      "temperature": 26,
+      "windSpeed": 0,
+      "pressure": 999,
+      "windDirection": 90,
+      "_id": "9a813ce1-e8c6-4197-a936-4a82fef7a1fa",
+      "stationId": "2171f1ae-1819-4e91-9294-27a402fb8604",
+      "timestamp": "2023-09-01 12:12:09"
+    },
+    {
+      "code": 800,
+      "temperature": 11,
+      "windSpeed": 26,
+      "pressure": 987,
+      "windDirection": 52,
+      "_id": "e0d0cd14-fddc-4eed-9d81-84047d9f2ebd",
+      "stationId": "d28110c3-fdf5-4a66-bc0f-7ca83c5c2f9e",
+      "timestamp": "2023-09-01 12:12:49"
     }
   ]
 }

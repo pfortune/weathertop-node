@@ -4,22 +4,23 @@
   let map = L.map('map')
   let openStreetMapLayer = L.tileLayer(
     'https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
-    { maxZoom: 19, attribution: '© OpenStreetMap' }
+    { maxZoom: 15, attribution: '© OpenStreetMap' }
   );
   openStreetMapLayer.addTo(map);
 
   let marker;
   let avgLat = avgLng = 0;
   {{#each stations}}
-    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{name}}"});
-    marker.bindPopup("{{name}}");
+    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{title}}"});
+    marker.bindPopup(`<a href="/station/{{_id}}">{{title}}</a>`);
     marker.addTo(map);
 
     avgLat += {{latitude}};
     avgLng += {{longitude}};
   {{/each}}
+
   avgLat /= {{stations.length}};
   avgLng /= {{stations.length}};
 
-  map.setView([avgLat, avgLng], 11);
+  map.setView([avgLat, avgLng], 7);
 </script>

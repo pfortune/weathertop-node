@@ -13,7 +13,10 @@ export function trend(readings, field) {
     return "";
   }
 
+  console.log(readings);
+
   const lastThreeReadings = readings.slice(-3).map((reading) => reading[field]);
+
   const [lastReading, secondLastReading, thirdLastReading] = lastThreeReadings;
 
   const isIncreasing = lastReading - secondLastReading > 0 && secondLastReading - thirdLastReading > 0;

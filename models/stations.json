@@ -23,38 +23,31 @@
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
-      "title": "Eiffel Tower",
+      "title": "Cliffs of Moher",
       "_id": "2f2189f8-4626-4982-b7a3-d6c958c49de6",
-      "latitude": 48.8584,
-      "longitude": 2.2945,
+      "latitude": 52.9715,
+      "longitude": -9.4309,
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
-      "title": "Statue of Liberty",
+      "title": "Blarney Castle",
       "_id": "dea8e45b-9ade-46b9-9c2d-ffab4fd20f02",
-      "latitude": 40.6892,
-      "longitude": -74.0445,
+      "latitude": 51.9292,
+      "longitude": -8.5703,
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
-      "title": "Machu Picchu",
+      "title": "Killarney National Park",
       "_id": "2171f1ae-1819-4e91-9294-27a402fb8604",
-      "latitude": -13.1631,
-      "longitude": -72.545,
+      "latitude": 52.0309,
+      "longitude": -9.4909,
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     },
     {
-      "title": "Taj Mahal",
-      "_id": "52768603-26cc-4dfa-a7b2-12387fef3c8e",
-      "latitude": 27.1751,
-      "longitude": 78.0421,
-      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
-    },
-    {
-      "title": "Great Wall of China",
+      "title": "Rock of Cashel",
       "_id": "d28110c3-fdf5-4a66-bc0f-7ca83c5c2f9e",
-      "latitude": 40.4319,
-      "longitude": 116.5704,
+      "latitude": 52.52,
+      "longitude": -7.89,
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397"
     }
   ]
