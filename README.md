@@ -12,6 +12,8 @@ Password: secret
 
 WeatherTop Release 4 is the final and most advanced version of the WeatherTop web companion application designed for WeatherTop 1000, a modular weather station. Building upon the previous versions, this release adds powerful new features like Charts of Trends using Frappe Charts, OpenWeather API integration, and station location mapping with Leafletjs.
 
+![Weather Top 1000](weathertop.png)
+
 ## Features
 
 ### From Previous Releases:
